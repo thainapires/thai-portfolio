@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" role="img" aria-label="Moodie screenshot placeholder">
+  <rect width="1600" height="1000" fill="#f8e2a6"/>
+  <rect x="96" y="96" width="1408" height="808" rx="48" fill="#fffdf9" opacity="0.84"/>
+  <circle cx="1320" cy="220" r="130" fill="#efc45d" opacity="0.45"/>
+  <path d="M96 710 C330 560 510 770 760 630 C1020 485 1210 555 1504 390 L1504 904 L96 904 Z" fill="#efc45d" opacity="0.20"/>
+  <rect x="210" y="190" width="1180" height="620" rx="34" fill="none" stroke="#151313" stroke-opacity="0.14" stroke-width="6" stroke-dasharray="28 24"/>
+  <rect x="290" y="290" width="520" height="44" rx="22" fill="#151313" opacity="0.18"/>
+  <rect x="290" y="374" width="760" height="32" rx="16" fill="#665f5b" opacity="0.16"/>
+  <rect x="290" y="434" width="620" height="32" rx="16" fill="#665f5b" opacity="0.13"/>
+  <rect x="290" y="550" width="240" height="72" rx="36" fill="#151313" opacity="0.82"/>
+  <rect x="890" y="510" width="330" height="190" rx="30" fill="#efc45d" opacity="0.38"/>
+  <text x="800" y="862" text-anchor="middle" font-family="Arial, sans-serif" font-size="42" font-weight="700" fill="#151313">Moodie screenshot</text>
+</svg>

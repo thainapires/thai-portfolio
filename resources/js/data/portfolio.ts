@@ -1,0 +1,449 @@
+import type { IconType } from 'react-icons';
+import type { LucideIcon } from 'lucide-react';
+
+import {
+    BadgeCheck,
+    Blocks,
+    Braces,
+    FileText,
+    PanelsTopLeft,
+    ShieldCheck,
+    Sparkles,
+    TerminalSquare,
+} from 'lucide-react';
+
+import {
+    FaBookOpen,
+    FaCss3,
+    FaEnvelope,
+    FaGithub,
+    FaHtml5,
+    FaLinkedinIn,
+    FaMapMarkerAlt,
+    FaPalette,
+} from 'react-icons/fa';
+
+import {
+    SiCloudflare,
+    SiDocker,
+    SiEslint,
+    SiFigma,
+    SiGit,
+    SiGithub,
+    SiGitlab,
+    SiJest,
+    SiLaravel,
+    SiLinux,
+    SiNodedotjs,
+    SiNotion,
+    SiPostgresql,
+    SiPostman,
+    SiPrettier,
+    SiPrisma,
+    SiReact,
+    SiReactquery,
+    SiSentry,
+    SiTailwindcss,
+    SiTypescript,
+    SiVite,
+    SiGo,
+    SiUbuntu,
+    SiMysql,
+    SiPhp,
+    SiLivewire,
+    SiFilament,
+    SiClaudecode,
+    SiRedis,
+    SiJavascript,
+    SiVitest,
+    SiNginx,
+    SiWakatime,
+    SiWordpress,
+    SiNestjs,
+    SiFastify,
+    SiVercel,
+    SiTraefikproxy,
+    SiMongodb
+} from 'react-icons/si';
+
+import { VscVscode } from 'react-icons/vsc';
+
+import {
+    FaBicycle,
+    FaCode,
+    FaGaugeHigh,
+    FaLayerGroup,
+    FaMountainSun,
+    FaPenRuler,
+} from 'react-icons/fa6';
+
+import { MdAutoAwesome } from 'react-icons/md';
+import { LuCodeXml } from 'react-icons/lu';
+import { RiNextjsFill } from 'react-icons/ri';
+
+export interface SocialLink {
+    label: string;
+    href: string;
+    icon: IconType;
+}
+
+export interface Skill {
+    title: string;
+    description: string;
+    icon: IconType;
+}
+
+export interface StackSkill {
+    name: string;
+    icon: IconType;
+    cardClassName: string;
+    tapeClassName: string;
+}
+
+export interface StackTool {
+    name: string;
+    icon: IconType;
+}
+
+export interface Project {
+    id: string;
+    number: string;
+    title: string;
+    description: string;
+    href: string;
+    githubHref?: string;
+    accent: 'violet' | 'pink' | 'yellow';
+    imageSrc: string;
+    imageAlt: string;
+    stats: string[];
+}
+
+export interface ProfessionalHighlight {
+    number: string;
+    title: string;
+    description: string;
+    tags: string[];
+    icon: LucideIcon;
+    paper: 'plain' | 'grid' | 'lined' | 'violet';
+    decoration?: 'beige-tape' | 'violet-tape' | 'clip' | 'sticker';
+    rotationClassName: string;
+}
+
+export interface Statistic {
+    value: string;
+    label: string;
+}
+
+export interface Hobby {
+    title: string;
+    description: string;
+    icon: IconType;
+    imageSrc: string;
+    imageAlt: string;
+}
+
+export const navItems = [
+    {label: 'Home', href: '#top' },
+    { label: 'About', href: '#about' },
+    { label: 'Skills', href: '#stack' },
+    { label: 'Work', href: '#work' },
+    { label: 'Projects', href: '#projects' },
+    { label: 'More', href: '#more' },
+    { label: 'Contact', href: '#contact' },
+];
+
+export const socialLinks: SocialLink[] = [
+    {
+        label: 'GitHub',
+        href: 'https://github.com/thainapires',
+        icon: FaGithub,
+    },
+    {
+        label: 'LinkedIn',
+        href: 'https://www.linkedin.com/in/thainapires',
+        icon: FaLinkedinIn,
+    },
+    {
+        label: 'Email',
+        href: 'mailto:thainapiresdev@gmail.com',
+        icon: FaEnvelope,
+    },
+];
+
+export const skills: Skill[] = [
+    {
+        title: 'Web Development',
+        description: 'I build fast, responsive and accessible web applications.',
+        icon: FaCode,
+    },
+    {
+        title: 'UI/UX Focused',
+        description: 'I care about clean interfaces and great user experience.',
+        icon: FaPenRuler,
+    },
+    {
+        title: 'Performance',
+        description: 'I write optimized code and ship products that perform.',
+        icon: FaGaugeHigh,
+    },
+];
+
+export const mainStackSkills: StackSkill[] = [
+    {
+        name: 'React',
+        icon: SiReact,
+        cardClassName: '-rotate-1',
+        tapeClassName: 'left-1/2 -translate-x-1/2 -rotate-2',
+    },
+    {
+        name: 'TypeScript',
+        icon: SiTypescript,
+        cardClassName: 'rotate-1',
+        tapeClassName: 'left-[48%] -translate-x-1/2 rotate-2',
+    },
+    {
+        name: 'Laravel',
+        icon: SiLaravel,
+        cardClassName: 'rotate-[-0.5deg]',
+        tapeClassName: 'left-[52%] -translate-x-1/2 -rotate-1',
+    },
+    {
+        name: 'Tailwind CSS',
+        icon: SiTailwindcss,
+        cardClassName: 'rotate-[0.75deg]',
+        tapeClassName: 'left-1/2 -translate-x-1/2 rotate-1',
+    },
+    {
+        name: 'Node.js',
+        icon: SiNodedotjs,
+        cardClassName: '-rotate-1',
+        tapeClassName: 'left-[46%] -translate-x-1/2 -rotate-3',
+    },
+    {
+        name: 'Docker',
+        icon: SiDocker,
+        cardClassName: 'rotate-1',
+        tapeClassName: 'left-[54%] -translate-x-1/2 rotate-2',
+    },
+];
+
+export const otherStackSkills: StackTool[] = [
+    { name: 'Git', icon: SiGit },
+    { name: 'GitHub', icon: SiGithub },
+    { name: 'GitLab', icon: SiGitlab },
+    { name: 'MySQL', icon: SiMysql},
+    { name: 'Go', icon: SiGo },
+    { name: 'Linux', icon: SiLinux },
+    { name: 'Ubuntu', icon: SiUbuntu },
+    { name: 'VS Code', icon: VscVscode },
+    { name: 'Postman', icon: SiPostman },
+    { name: 'Jest', icon: SiJest },
+    { name: 'ESLint', icon: SiEslint },
+    { name: 'Prettier', icon: SiPrettier },
+    { name: 'Vite', icon: SiVite },
+    { name: 'Prisma', icon: SiPrisma },
+    { name: 'Sentry', icon: SiSentry },
+    { name: 'VSCode', icon: VscVscode },
+    { name: 'CSS3', icon: FaCss3 },
+    { name: 'HTML5', icon: FaHtml5},
+    { name: 'PHP', icon: SiPhp },
+    { name: 'PostgreSQL', icon: SiPostgresql },
+    { name: 'Livewire', icon: SiLivewire },
+    { name: 'Filament', icon: SiFilament },
+    { name: 'Claude Code', icon: SiClaudecode },
+    { name: 'Codex', icon: LuCodeXml },
+    { name: 'Redis', icon: SiRedis },
+    { name: 'JavaScript', icon: SiJavascript },
+    { name: 'Vitest', icon: SiVitest },
+    { name: 'Nginx', icon: SiNginx },
+    { name: 'Notion', icon: SiNotion },
+    { name: 'Wakatime', icon: SiWakatime },
+    { name: 'Wordpress', icon: SiWordpress },
+    { name: 'Traefik', icon: SiTraefikproxy },
+    { name: 'NestJS', icon: SiNestjs },
+    { name: 'Fastify', icon: SiFastify },
+    { name: 'Vercel', icon: SiVercel },
+    { name: 'Next.js', icon: RiNextjsFill },
+    { name: 'MongoDB', icon: SiMongodb },
+];
+
+export const projects: Project[] = [
+    {
+        id: 'bomdiadev',
+        number: '01',
+        title: 'Bom dia Dev',
+        description: 'A personal dev dashboard that surfaces GitLab MR status, code review load, and daily coding activity in one glanceable view.',
+        href: '',
+        githubHref: 'https://github.com/thainapires/bom-dia-dev',
+        accent: 'violet',
+        imageSrc: '/images/projects/bom-dia-dev-dashboard.png',
+        imageAlt: 'Bom dia Dev project screenshot placeholder',
+        stats: ['Dashboard', 'GitLab', 'Productivity', 'TypeScript'],
+    },
+    {
+        id: 'gifusion',
+        number: '02',
+        title: 'Git Fusion',
+        description: 'Git Fusion is a tool that seamlessly combines contribution data from GitHub and GitLab into a unified, interactive graph.',
+        href: 'https://gitfusion.vercel.app',
+        githubHref: 'https://github.com/thainapires/gitfusion',
+        accent: 'pink',
+        imageSrc: '/images/projects/gitfusion.png',
+        imageAlt: 'Git Fusion project screenshot placeholder',
+        stats: ['Contribution Tracking', 'API Integration', 'Next.js'],
+    },
+    {
+        id: 'schedulynx',
+        number: '03',
+        title: 'Schedulynx',
+        description: 'Schedulynx is a scheduling application that syncs with your Google Calendar, allowing others to book time directly into your calendar with ease.',
+        href: 'https://schedulynx.vercel.app',
+        githubHref: 'https://github.com/thainapires/schedulynx',
+        accent: 'yellow',
+        imageSrc: '/images/projects/schedulynx.png',
+        imageAlt: 'Schedulynx project screenshot placeholder',
+        stats: ['Scheduling', 'Calendar Integration', 'OAuth'],
+    },
+];
+
+export const professionalHighlights: ProfessionalHighlight[] = [
+    {
+        number: '01',
+        title: 'New partner integration flow',
+        description: 'Designed and implemented a new integration flow for custom partners.',
+        tags: ['Laravel', 'APIs', 'Integration'],
+        icon: Blocks,
+        paper: 'grid',
+        decoration: 'beige-tape',
+        rotationClassName: 'lg:-rotate-1',
+    },
+    {
+        number: '02',
+        title: 'Digital card experience',
+        description: 'Built backend and frontend flows for a digital card experience.',
+        tags: ['Laravel', 'React', 'UX'],
+        icon: PanelsTopLeft,
+        paper: 'lined',
+        rotationClassName: 'lg:rotate-1',
+    },
+    {
+        number: '03',
+        title: 'Reusable integration model',
+        description: 'Created a flexible integration structure that made future integrations easier to evolve.',
+        tags: ['Architecture', 'PHP', 'APIs'],
+        icon: Braces,
+        paper: 'violet',
+        decoration: 'beige-tape',
+        rotationClassName: 'lg:-rotate-1',
+    },
+    {
+        number: '04',
+        title: 'Improved internal product flows',
+        description: 'Helped simplify complex product flows and improve usability.',
+        tags: ['React', 'TypeScript', 'UX'],
+        icon: Sparkles,
+        paper: 'plain',
+        decoration: 'clip',
+        rotationClassName: 'lg:rotate-1',
+    },
+    {
+        number: '05',
+        title: 'Developer experience improvements',
+        description: 'Improved local setup, scripts and internal tools to make development easier.',
+        tags: ['Tools', 'Scripts', 'DX'],
+        icon: TerminalSquare,
+        paper: 'violet',
+        decoration: 'sticker',
+        rotationClassName: 'lg:rotate-1',
+    },
+    {
+        number: '06',
+        title: 'Testing & safer releases',
+        description: 'Added tests and improved quality checks to reduce regressions.',
+        tags: ['PHPUnit', 'Pest', 'QA'],
+        icon: ShieldCheck,
+        paper: 'lined',
+        decoration: 'beige-tape',
+        rotationClassName: 'lg:-rotate-1',
+    },
+    {
+        number: '07',
+        title: 'UI consistency & design system',
+        description: 'Worked on reusable components and more consistent UI patterns.',
+        tags: ['Design System', 'React', 'UI'],
+        icon: BadgeCheck,
+        paper: 'plain',
+        rotationClassName: 'lg:rotate-1',
+    },
+    {
+        number: '08',
+        title: 'Documentation that helps',
+        description: 'Improved technical documentation to make development and onboarding easier.',
+        tags: ['Docs', 'Guides', 'DX'],
+        icon: FileText,
+        paper: 'grid',
+        decoration: 'violet-tape',
+        rotationClassName: 'lg:-rotate-1',
+    },
+];
+
+export const statistics: Statistic[] = [
+    {
+        value: '5+',
+        label: 'Years of experience',
+    },
+    {
+        value: '1',
+        label: 'Computer Science degree',
+    },
+    {
+        value: '∞',
+        label: 'Things left to explore',
+    },
+];
+
+export const hobbies: Hobby[] = [
+    {
+        title: 'Cycling',
+        description: 'Freedom on two wheels. It keeps me present and challenges me to go further.',
+        icon: FaBicycle,
+        imageSrc: '/images/hobbies/bike.png',
+        imageAlt: 'Cycling hobby photo placeholder',
+    },
+    {
+        title: 'Nature',
+        description: 'Being outdoors recharges my energy and reminds me of what really matters.',
+        icon: FaMountainSun,
+        imageSrc: '/images/hobbies/nature.png',
+        imageAlt: 'Nature hobby photo placeholder',
+    },
+    {
+        title: 'Art',
+        description: 'I love exploring creativity through illustrations, paintings and small visual projects.',
+        icon: FaPalette,
+        imageSrc: '/images/hobbies/art.png',
+        imageAlt: 'Art hobby photo placeholder',
+    },
+    {
+        title: 'Reading',
+        description: 'Books inspire me, teach me and transport me to new worlds.',
+        icon: FaBookOpen,
+        imageSrc: '/images/hobbies/read.png',
+        imageAlt: 'Reading hobby photo placeholder',
+    },
+    {
+        title: 'Travelling',
+        description: 'Exploring new places and cultures broadens my perspective and enriches my understanding of the world.',
+        icon: FaMapMarkerAlt,
+        imageSrc: '/images/hobbies/travel.png',
+        imageAlt: 'Travelling hobby photo placeholder',
+    },
+];
+
+export const heroDecorations = {
+    featureIcons: [
+        MdAutoAwesome,
+        FaLayerGroup,
+        FaCode,
+    ],
+};

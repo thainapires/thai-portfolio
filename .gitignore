@@ -1,0 +1,16 @@
+*.log
+.DS_Store
+.env
+.env.*
+/node_modules
+/dist
+/.codex
+/.cursor
+/.idea
+/.vscode
+/.zed
+.agents/*
+.claude/*
+.codex/*
+Thumbs.db
+.playwright-mcp/
