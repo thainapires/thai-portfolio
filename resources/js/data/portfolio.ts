@@ -140,6 +140,9 @@ export interface Hobby {
     icon: IconType;
     imageSrc: string;
     imageAlt: string;
+    rotationClassName: string;
+    tapeClassName: string;
+    doodle?: 'heart' | 'plane' | 'star' | 'sun' | 'underline';
 }
 
 export const navItems = [
@@ -409,6 +412,9 @@ export const hobbies: Hobby[] = [
         icon: FaBicycle,
         imageSrc: '/images/hobbies/bike.png',
         imageAlt: 'Cycling hobby photo placeholder',
+        rotationClassName: 'sm:-rotate-1',
+        tapeClassName: '-top-3 left-9 -rotate-6 bg-primary-soft/75',
+        doodle: 'underline',
     },
     {
         title: 'Nature',
@@ -416,6 +422,9 @@ export const hobbies: Hobby[] = [
         icon: FaMountainSun,
         imageSrc: '/images/hobbies/nature.png',
         imageAlt: 'Nature hobby photo placeholder',
+        rotationClassName: 'sm:rotate-1',
+        tapeClassName: '-top-3 left-1/2 -translate-x-1/2 rotate-6 bg-accent-yellow-soft/75',
+        doodle: 'sun',
     },
     {
         title: 'Art',
@@ -423,6 +432,9 @@ export const hobbies: Hobby[] = [
         icon: FaPalette,
         imageSrc: '/images/hobbies/art.png',
         imageAlt: 'Art hobby photo placeholder',
+        rotationClassName: '',
+        tapeClassName: '-top-3 left-1/2 -translate-x-1/2 rotate-3 bg-accent-yellow-soft/70',
+        doodle: 'star',
     },
     {
         title: 'Reading',
@@ -430,6 +442,9 @@ export const hobbies: Hobby[] = [
         icon: FaBookOpen,
         imageSrc: '/images/hobbies/read.png',
         imageAlt: 'Reading hobby photo placeholder',
+        rotationClassName: 'sm:rotate-1',
+        tapeClassName: '-top-3 left-1/2 -translate-x-1/2 -rotate-3 bg-surface/85',
+        doodle: 'heart',
     },
     {
         title: 'Travelling',
@@ -437,6 +452,9 @@ export const hobbies: Hobby[] = [
         icon: FaMapMarkerAlt,
         imageSrc: '/images/hobbies/travel.png',
         imageAlt: 'Travelling hobby photo placeholder',
+        rotationClassName: 'sm:-rotate-1',
+        tapeClassName: '-top-3 right-8 rotate-6 bg-primary-soft/75',
+        doodle: 'plane',
     },
 ];
 
