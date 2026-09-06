@@ -3,6 +3,8 @@ import type { LucideIcon } from 'lucide-react';
 
 import {
     BadgeCheck,
+    Cloud,
+    GitBranch,
     Blocks,
     Braces,
     FileText,
@@ -18,9 +20,12 @@ import {
     FaEnvelope,
     FaGithub,
     FaHtml5,
+    FaInfinity,
     FaLinkedinIn,
     FaMapMarkerAlt,
     FaPalette,
+    FaReact,
+    FaSwatchbook,
 } from 'react-icons/fa';
 
 import {
@@ -77,9 +82,10 @@ import {
     FaPenRuler,
 } from 'react-icons/fa6';
 
-import { MdAutoAwesome } from 'react-icons/md';
+import { MdAutoAwesome, MdOutlineIntegrationInstructions } from 'react-icons/md';
 import { LuCodeXml } from 'react-icons/lu';
 import { RiNextjsFill } from 'react-icons/ri';
+import { TbBrandNextjs } from 'react-icons/tb';
 
 export interface SocialLink {
     label: string;
@@ -141,6 +147,16 @@ export interface JourneyEntry {
     location: string;
     description: string;
     tags: string[];
+}
+
+export interface EducationEntry {
+    period: string;
+    title: string;
+    institution: string;
+    degree: string;
+    location: string;
+    description: string;
+    note?: string;
 }
 
 export interface Hobby {
@@ -412,6 +428,28 @@ export const statistics: Statistic[] = [
         value: '∞',
         label: 'Things left to explore',
     },
+];
+
+export const education: EducationEntry[] = [
+    { period: '2016 — 2021', title: 'Computer Science', institution: 'Federal Center for Technological Education Celso Suckow da Fonseca (CEFET/RJ)', degree: "Bachelor's Degree", location: 'Rio de Janeiro, Brazil', description: 'A solid foundation in software engineering, algorithms, data structures and problem solving.', note: 'CEFET/RJ' },
+    { period: '2019 — 2020', title: 'International Academic Exchange', institution: 'Polytechnic Institute of Santarém', degree: '1 semester of Bachelor\'s Degree', location: 'Santarém, Portugal', description: 'Academic exchange of 1 semester in Portugal, where I took courses in the Informatics course at IPSantarém.', note: 'International Exchange 🇵🇹' },
+];
+
+ export interface CertificationEntry {
+    title: string;
+    issuer: string;
+    year: string;
+    icon: IconType;
+    color: string;
+    backgroundColor?: string;
+}
+
+export const certifications: CertificationEntry[] = [
+    { title: 'Clean Code', issuer: 'Rocketseat', year: 'apr 2025', icon: FaCode, color: '#475569', backgroundColor: '#E2E8F0' },
+    { title: 'Diving deeper into Next.js', issuer: 'Rocketseat', year: 'apr 2025', icon: TbBrandNextjs, color: 'white', backgroundColor: 'black' },
+    { title: 'ReactJS Development Program', issuer: 'Rocketseat', year: 'apr 2025', icon: FaReact, color: '#00D8FF', backgroundColor: '#222222' },
+    { title: 'Devops Culture Fundamentals', issuer: 'Rocketseat', year: 'oct 2024', icon: FaInfinity, color: '#7C3AED', backgroundColor: '#EDE9FE' },
+    { title: 'Design System', issuer: 'Rocketseat', year: 'oct 2024', icon: FaSwatchbook, color: '#0F766E', backgroundColor: '#CCFBF1' },
 ];
 
 export const journey: JourneyEntry[] = [
