@@ -2,9 +2,12 @@ import { ArrowUpRight } from 'lucide-react';
 import { FaGithub } from 'react-icons/fa';
 
 import type { Project } from '@/data/portfolio';
-import { projects } from '@/data/portfolio';
+import { projects, socialLinks } from '@/data/portfolio';
 import { Container } from '@/components/ui/Container';
 import { SectionLabel } from '@/components/ui/SectionLabel';
+import { ViewportRoughNotation } from '../ui/ViewportRoughNotation';
+
+const githubProfileHref = socialLinks.find((link) => link.label === 'GitHub')?.href ?? 'https://github.com/thainapires';
 
 function ProjectImage({ project, isFeatured = false }: { project: Project; isFeatured?: boolean }) {
     return (
@@ -144,11 +147,22 @@ export function FeaturedProjects() {
     // const [featuredProject, ...moreProjects] = projects;
 
     return (
-        <section id="projects" className="section-y scroll-mt-24 lg:scroll-mt-28">
+        <section id="projects" className="section-y scroll-mt-24 border-b border-border lg:scroll-mt-28">
             <Container>
                 <div className="mb-8 max-w-xl sm:mb-10">
                     <SectionLabel>SELECTED WORK</SectionLabel>
-                    <h2 className="mt-3 mb-3 text-4xl font-extrabold leading-tight sm:text-5xl lg:text-6xl">Things I've built.</h2>
+                    <h2 className="mt-3 mb-3 text-4xl font-extrabold leading-tight sm:text-5xl lg:text-6xl">
+                        Things I've {' '}
+                        <ViewportRoughNotation
+                            type="highlight" 
+                            show 
+                            color="#D5CBFE"
+                            strokeWidth={2}
+                            animationDuration={800}
+                        >
+                            built
+                        </ViewportRoughNotation>.
+                    </h2>
                     <p className="m-0 text-base leading-7 text-text-secondary sm:text-lg">A collection of things I've imagined, explored, designed and turned into working software.</p>
                 </div>
                                                                                            
@@ -160,6 +174,19 @@ export function FeaturedProjects() {
                             {projects.map((project, index) => (
                                 <ProjectCard key={`${project.id}-${project.number}`} project={project} index={index} />
                             ))}
+                        </div>
+
+                        <div className="mt-8 flex justify-center sm:mt-10">
+                            <a
+                                className="group/link inline-flex min-h-12 items-center justify-center gap-3 rounded-pill border border-border bg-surface/85 px-6 text-xs font-extrabold uppercase text-text-primary shadow-card transition-[background-color,border-color,box-shadow,transform] duration-200 hover:-translate-y-0.5 hover:border-primary-soft hover:bg-primary-soft/20 hover:shadow-soft motion-reduce:transition-none motion-reduce:hover:transform-none sm:px-7"
+                                href={githubProfileHref}
+                                target="_blank"
+                                rel="noreferrer"
+                            >
+                                <FaGithub className="size-4" aria-hidden="true" />
+                                View more on GitHub
+                                <ArrowUpRight className="size-3.5 transition-transform group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5 motion-reduce:transition-none motion-reduce:group-hover/link:translate-x-0 motion-reduce:group-hover/link:translate-y-0" aria-hidden="true" />
+                            </a>
                         </div>
                     </div>
                 )}
