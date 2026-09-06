@@ -42,6 +42,18 @@ Pré-visualizar o build localmente:
 npm run start
 ~~~
 
+
+## Contribution graph
+
+Configure these environment variables locally and in Vercel to load the unified GitHub + GitLab contribution graph. GitLab uses the public profile calendar and does not require a token:
+
+~~~text
+GITHUB_USERNAME=thainapires
+GITHUB_TOKEN=
+GITLAB_USERNAME=thainapires
+GITLAB_BASE_URL=https://gitlab.com
+~~~
+
 ## Deploy
 
 Para Vercel:
