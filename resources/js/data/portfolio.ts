@@ -8,6 +8,9 @@ import {
     Blocks,
     Braces,
     FileText,
+    Globe,
+    Home,
+    MapPin,
     PanelsTopLeft,
     ShieldCheck,
     Sparkles,
@@ -138,6 +141,11 @@ export interface ProfessionalHighlight {
 export interface Statistic {
     value: string;
     label: string;
+}
+
+export interface ContactFact {
+    label: string;
+    icon: LucideIcon;
 }
 
 export interface JourneyEntry {
@@ -428,6 +436,12 @@ export const statistics: Statistic[] = [
         value: '∞',
         label: 'Things left to explore',
     },
+];
+
+export const contactFacts: ContactFact[] = [
+    { label: 'Based in Rio de Janeiro, Brazil', icon: MapPin },
+    { label: 'Working remotely', icon: Home },
+    { label: 'Open to opportunities worldwide', icon: Globe },
 ];
 
 export const education: EducationEntry[] = [
