@@ -1,18 +1,28 @@
 import { type MouseEvent, useEffect, useRef, useState } from 'react';
 import { FaBars, FaMoon, FaSun, FaXmark } from 'react-icons/fa6';
+import { ViewportRoughNotation } from '@/components/ui/ViewportRoughNotation';
 
 import { navItems } from '@/data/portfolio';
 
-function ActiveLinkScribble({ isActive }: { isActive: boolean }) {
-    const visibilityClassName = isActive ? 'opacity-100' : 'opacity-0 group-hover:opacity-100 group-focus-visible:opacity-100';
-
+function NavLabel({
+    children,
+    isActive,
+}: {
+    children: React.ReactNode;
+    isActive: boolean;
+}) {
     return (
-        <img
-            aria-hidden="true"
-            className={`${visibilityClassName} pointer-events-none absolute bottom-0 left-1/2 h-2.5 w-[calc(100%+0.75rem)] max-w-none -translate-x-1/2 select-none transition-opacity duration-150`}
-            src="/images/header/scribble.svg"
-            alt=""
-        />
+        <ViewportRoughNotation
+            type="underline"
+            show={isActive}
+            color="#8B73F6"
+            strokeWidth={2}
+            padding={2}
+            iterations={2}
+            animationDuration={450}
+        >
+            {children}
+        </ViewportRoughNotation>
     );
 }
 
@@ -114,9 +124,15 @@ export function Header() {
 
             <nav className="hidden items-center gap-10 text-sm xl:text-base font-bold text-text-primary lg:flex xl:gap-16" aria-label="Primary navigation">
                 {navItems.map((item) => (
-                    <a className="link-hover-primary group relative inline-block py-2 uppercase" key={item.href} href={item.href} onClick={(event) => handleNavClick(event, item.href)}>
-                        {item.label}
-                        <ActiveLinkScribble isActive={activeHref === item.href} />
+                    <a
+                        className="link-hover-primary group relative inline-block py-2 uppercase"
+                        key={item.href}
+                        href={item.href}
+                        onClick={(event) => handleNavClick(event, item.href)}
+                    >
+                        <NavLabel isActive={activeHref === item.href}>
+                            {item.label}
+                        </NavLabel>
                     </a>
                 ))}
             </nav>
@@ -139,10 +155,9 @@ export function Header() {
                 <nav className="absolute inset-x-0 top-full grid gap-1 rounded-soft border border-border bg-surface/95 p-4 shadow-soft lg:hidden" aria-label="Mobile navigation">
                     {navItems.map((item) => (
                         <a className="link-hover-primary group p-3 font-extrabold" key={item.href} href={item.href} onClick={(event) => { handleNavClick(event, item.href); setIsOpen(false); }}>
-                            <span className="relative inline-block pb-2">
+                            <NavLabel isActive={activeHref === item.href}>
                                 {item.label}
-                                <ActiveLinkScribble isActive={activeHref === item.href} />
-                            </span>
+                            </NavLabel>
                         </a>
                     ))}
                 </nav>
