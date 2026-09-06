@@ -1,24 +1,36 @@
 import type { Hobby } from '@/data/portfolio';
+import type { CSSProperties } from 'react';
 
 interface HobbyCardProps {
     hobby: Hobby;
 }
 
 function HobbyDoodle({ doodle }: { doodle?: Hobby['doodle'] }) {
-    if (doodle === 'sun') {
-        return <span className="pointer-events-none absolute right-4 bottom-7 hidden font-hand text-3xl leading-none text-text-primary/45 sm:block" aria-hidden="true">☼</span>;
+    const maskStyle = (src: string): CSSProperties => ({
+        WebkitMaskImage: "url('" + src + "')",
+        WebkitMaskPosition: 'center',
+        WebkitMaskRepeat: 'no-repeat',
+        WebkitMaskSize: 'contain',
+        maskImage: "url('" + src + "')",
+        maskPosition: 'center',
+        maskRepeat: 'no-repeat',
+        maskSize: 'contain',
+    });
+
+    if (doodle === 'plant') {
+        return <span className="pointer-events-none absolute right-2 -bottom-4 hidden h-10 w-6 -rotate-12 bg-emerald-600 sm:block" style={maskStyle("/images/hobbies/plant.svg")} aria-hidden="true" />;
     }
 
     if (doodle === 'star') {
-        return <span className="pointer-events-none absolute right-4 bottom-6 hidden rotate-12 font-hand text-3xl leading-none text-text-primary/45 sm:block" aria-hidden="true">✧</span>;
+        return <span className="pointer-events-none absolute right-2 -bottom-4 hidden size-4 -rotate-12 bg-yellow-500 sm:block" style={maskStyle("/images/hobbies/star.svg")} aria-hidden="true" />;
     }
 
-    if (doodle === 'heart') {
-        return <span className="pointer-events-none absolute right-4 top-1/2 hidden -rotate-12 font-hand text-3xl leading-none text-text-primary/50 sm:block" aria-hidden="true">♡</span>;
+    if (doodle === 'stars') {
+        return <span className="pointer-events-none absolute right-2 -bottom-4 hidden size-10 rotate-12 bg-fuchsia-800 sm:block" style={maskStyle("/images/hobbies/stars.svg")} aria-hidden="true" />;
     }
 
     if (doodle === 'plane') {
-        return <span className="pointer-events-none absolute right-4 bottom-7 hidden rotate-12 text-2xl leading-none text-text-primary/45 sm:block" aria-hidden="true">✈</span>;
+        return <span className="pointer-events-none absolute right-2 -bottom-1 hidden h-6 w-8 rotate-8 bg-blue-500 sm:block" style={maskStyle("/images/assets/plane.svg")} aria-hidden="true" />;
     }
 
     if (doodle === 'underline') {

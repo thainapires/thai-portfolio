@@ -1,7 +1,22 @@
-import { hobbies } from '@/data/portfolio';
+import { hobbies, hobbyExtras } from '@/data/portfolio';
 import { Container } from '@/components/ui/Container';
 import { SectionLabel } from '@/components/ui/SectionLabel';
 import { HobbyCard } from './HobbyCard';
+
+function HobbyExtraBadges() {
+    return (
+        <ul className="mx-auto mt-9 flex max-w-5xl list-none flex-wrap justify-center gap-3 p-0 sm:mt-10 sm:gap-4" aria-label="Other things I like">
+            {hobbyExtras.map((item) => (
+                <li key={item.label}>
+                    <span className={`inline-flex items-center gap-2 rounded-pill border border-border bg-surface/90 px-3 py-2 text-xs font-extrabold lowercase leading-none text-text-primary shadow-card ${item.rotationClassName}`}>
+                        {item.emoji}{' '}
+                        {item.label}
+                    </span>
+                </li>
+            ))}
+        </ul>
+    );
+}
 
 export function Hobbies() {
     return (
@@ -20,6 +35,8 @@ export function Hobbies() {
                 <div className="mt-8 grid gap-7 sm:grid-cols-2 lg:grid-cols-5 lg:gap-5 xl:gap-7">
                     {hobbies.map((hobby) => <HobbyCard key={hobby.title} hobby={hobby} />)}
                 </div>
+
+                <HobbyExtraBadges />
             </Container>
         </section>
     );

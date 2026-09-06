@@ -175,7 +175,13 @@ export interface Hobby {
     imageAlt: string;
     rotationClassName: string;
     tapeClassName: string;
-    doodle?: 'heart' | 'plane' | 'star' | 'sun' | 'underline';
+    doodle?: 'plant' | 'star' | 'stars' | 'plane' | 'underline';
+}
+
+export interface HobbyExtra {
+    label: string;
+    emoji: string;
+    rotationClassName: string;
 }
 
 export const navItems = [
@@ -494,7 +500,7 @@ export const hobbies: Hobby[] = [
         imageAlt: 'Nature hobby photo placeholder',
         rotationClassName: 'sm:rotate-1',
         tapeClassName: '-top-3 left-1/2 -translate-x-1/2 rotate-6 bg-accent-yellow-soft/75',
-        doodle: 'sun',
+        doodle: 'plant',
     },
     {
         title: 'Art',
@@ -514,7 +520,7 @@ export const hobbies: Hobby[] = [
         imageAlt: 'Reading hobby photo placeholder',
         rotationClassName: 'sm:rotate-1',
         tapeClassName: '-top-3 left-1/2 -translate-x-1/2 -rotate-3 bg-surface/85',
-        doodle: 'heart',
+        doodle: 'stars',
     },
     {
         title: 'Travelling',
@@ -525,6 +531,74 @@ export const hobbies: Hobby[] = [
         rotationClassName: 'sm:-rotate-1',
         tapeClassName: '-top-3 right-8 rotate-6 bg-primary-soft/75',
         doodle: 'plane',
+    },
+];
+
+export const hobbyExtras: HobbyExtra[] = [
+    {
+        label: 'plants',
+        emoji: '🌱',
+        rotationClassName: 'rotate-2',
+    },
+    {
+        label: 'air dry clay',
+        emoji: '🏺',
+        rotationClassName: '-rotate-3',
+    },
+    {
+        label: 'watercolor',
+        emoji: '🎨',
+        rotationClassName: '-rotate-2',
+    },
+    {
+        label: 'acrylics',
+        emoji: '🖼️',
+        rotationClassName: 'rotate-3',
+    },
+    {
+        label: 'art history',
+        emoji: '🏛️',
+        rotationClassName: '-rotate-2',
+    },
+    {
+        label: 'geoguessr',
+        emoji: '🌍',
+        rotationClassName: 'rotate-3',
+    },
+    {
+        label: 'puzzles',
+        emoji: '🧩',
+        rotationClassName: '-rotate-2',
+    },
+    {
+        label: 'ocean',
+        emoji: '🌊',
+        rotationClassName: 'rotate-3',
+    },
+    {
+        label: 'carioca',
+        emoji: '⛱️',
+        rotationClassName: '-rotate-2',
+    },
+    {
+        label: 'açaí lover',
+        emoji: '🫐',
+        rotationClassName: 'rotate-3',
+    },
+    {
+        label: 'camping',
+        emoji: '⛺',
+        rotationClassName: '-rotate-2',
+    },
+    {
+        label: 'hiking',
+        emoji: '🥾',
+        rotationClassName: 'rotate-3',
+    },
+    {
+        label: 'places I\'ve been',
+        emoji: '🇧🇷 🇵🇹 🇩🇪 🇬🇧 🇮🇹 🇻🇦 🇫🇷 🇳🇱 🇧🇪 🇨🇭 🇱🇺 🇦🇹 🇵🇱 🇺🇾 🇦🇷 🇨🇱',
+        rotationClassName: '',
     },
 ];
 
