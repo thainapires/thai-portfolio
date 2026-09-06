@@ -134,6 +134,15 @@ export interface Statistic {
     label: string;
 }
 
+export interface JourneyEntry {
+    period: string;
+    title: string;
+    company: string;
+    location: string;
+    description: string;
+    tags: string[];
+}
+
 export interface Hobby {
     title: string;
     description: string;
@@ -403,6 +412,15 @@ export const statistics: Statistic[] = [
         value: '∞',
         label: 'Things left to explore',
     },
+];
+
+export const journey: JourneyEntry[] = [
+    { period: '2026 — Now', title: 'Mid-level Full Stack Developer', company: 'Rede Parcerias', location: 'Remote · Rio de Janeiro, Brazil', description: 'Building and evolving complex features for a multi-tenant SaaS platform, working across frontend, backend, APIs and integrations. Focused on scalable architecture, performance, maintainability and user experience, while contributing to technical decisions, code reviews and continuous improvements.', tags: ['Laravel', 'React', 'TypeScript', 'Go', 'MySQL', 'Docker'] },
+    { period: '2021 — 2025', title: 'Junior Full Stack Developer', company: 'Rede Parcerias', location: 'Remote · Rio de Janeiro, Brazil', description: 'Developed and maintained features across a multi-tenant SaaS platform, working with frontend and backend applications, corporate APIs and third-party integrations. Contributed to the modernization of legacy systems, microservices, authentication flows and continuous improvements to the platform.', tags: ['Laravel', 'PHP', 'Vue.js', 'React', 'Go', 'APIs'] },
+    { period: '2021', title: 'Software Development Intern', company: 'Rede Parcerias', location: 'Remote · Rio de Janeiro, Brazil', description: 'Started my software development career building web features, maintaining existing applications and integrating corporate APIs. Worked closely with an international team, gaining hands-on experience with production systems, debugging and collaborative development.', tags: ['PHP', 'Laravel', 'JavaScript', 'APIs', 'Git'] },
+    { period: '2020 — 2021', title: 'Co-founder & Developer', company: 'Duki.app', location: 'Remote · Rio de Janeiro, Brazil', description: 'Co-founded a social-impact education project, building digital tools and helping shape the product from idea to implementation.', tags: ['React', 'Node.js', 'Product', 'Social Impact'] },
+    { period: '2018 — 2019', title: 'Marketing & Audiovisual', company: 'Enactus CEFET/RJ', location: 'Rio de Janeiro, Brazil', description: 'Worked with communication, marketing and audiovisual production for social entrepreneurship projects and national events.', tags: ['Marketing', 'Audiovisual', 'Communication'] },
+    { period: '2018 — 2019', title: 'Marketing & Branding', company: 'Toti', location: 'Rio de Janeiro, Brazil', description: 'Worked with branding, visual identity and digital content for a social-impact startup focused on education and technology.', tags: ['Branding', 'Design', 'Social Impact'] },
 ];
 
 export const hobbies: Hobby[] = [
