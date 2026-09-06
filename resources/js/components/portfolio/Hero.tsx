@@ -1,7 +1,9 @@
+import { motion, useReducedMotion } from 'motion/react';
 import { FaArrowDown, FaArrowRight } from 'react-icons/fa6';
 
 import { PrimaryButton, TextButton } from '@/components/ui/Buttons';
 import { Container } from '@/components/ui/Container';
+import { ViewportRoughNotation } from '@/components/ui/ViewportRoughNotation';
 
 import { Doodle } from './decorations/Doodle';
 import { DotPattern } from './decorations/DotPattern';
@@ -25,18 +27,98 @@ const terminalLines = [
     },
 ];
 
+function HeroTerminalArrow() {
+    const shouldReduceMotion = useReducedMotion();
+
+    const body = "M172 82C145 27 91 13 50 35C35 43 24 54 18 65";
+    const head = "M34 54L18 65L22 46";
+
+    if (shouldReduceMotion) {
+        return (
+            <svg
+                aria-hidden="true"
+                className="pointer-events-none absolute left-0 top-0 z-20 hidden w-36 -translate-x-2/3 -translate-y-2/3 -rotate-3 text-text-primary md:block lg:w-52 lg:-translate-x-3/4"
+                viewBox="0 0 176 112"
+                fill="none"
+            >
+                <path
+                    d={body}
+                    stroke="currentColor"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="4"
+                />
+
+                <path
+                    d={head}
+                    stroke="currentColor"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="4"
+                />
+            </svg>
+        );
+    }
+
+    return (
+        <motion.svg
+            aria-hidden="true"
+            className="pointer-events-none absolute left-0 top-0 z-20 hidden w-36 -translate-x-2/3 -translate-y-2/3 -rotate-3 text-text-primary md:block lg:w-52 lg:-translate-x-3/4"
+            viewBox="0 0 176 112"
+            fill="none"
+        >
+            <motion.g
+                animate={{
+                    y: [0, -2, 0],
+                    rotate: [-1, 1, -1],
+                }}
+                transition={{
+                    delay: 1.5,
+                    duration: 5,
+                    repeat: Infinity,
+                    ease: "easeInOut",
+                }}
+            >
+                <motion.path
+                    d={body}
+                    stroke="currentColor"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="4"
+                    initial={{ pathLength: 0, opacity: 0 }}
+                    animate={{ pathLength: 1, opacity: 1 }}
+                    transition={{
+                        delay: 0.45,
+                        duration: 0.9,
+                        ease: [0.45, 0, 0.2, 1],
+                    }}
+                />
+
+                <motion.path
+                    d={head}
+                    stroke="currentColor"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="4"
+                    initial={{ pathLength: 0, opacity: 0 }}
+                    animate={{ pathLength: 1, opacity: 1 }}
+                    transition={{
+                        delay: 1.18,
+                        duration: 0.32,
+                        ease: "easeOut",
+                    }}
+                />
+            </motion.g>
+        </motion.svg>
+    );
+}
+
 export function Hero() {
     return (
         <section id="top" className="relative -mt-24 grid min-h-svh flex-1 overflow-x-hidden overflow-y-visible lg:-mt-28">
             <div className="pointer-events-none absolute inset-0 overflow-x-hidden overflow-y-visible" aria-hidden="true">
                 <img
-                    className="absolute z-0 hidden h-auto max-w-none select-none lg:block lg:bottom-0 lg:-left-0 lg:w-180 opacity-50"
-                    src="/images/hero/left-inferior-paper.png"
-                    alt=""
-                />
-
-                <img
-                    className="absolute z-0 hidden h-auto max-w-none select-none lg:block lg:-bottom-0 lg:-right-0 lg:w-180 opacity-50"
+                    className="absolute z-0 hidden h-auto max-w-none select-none lg:block lg:-bottom-0 lg:-right-0 lg:w-100 opacity-50"
                     src="/images/hero/right-inferior-paper.png"
                     alt=""
                 />
@@ -62,14 +144,20 @@ export function Hero() {
                                 Thainá
                             </span>
                         </span>
-
-                        <strong className="ml-14 mt-1 block w-fit -rotate-3 font-hand text-4xl font-bold text-primary sm:ml-24 sm:text-6xl lg:text-3xl">
-                            Full Stack Developer!
-                        </strong>
+                            <strong className="ml-14 mt-1 block w-fit -rotate-3 font-hand text-4xl font-bold text-primary sm:ml-24 sm:text-6xl lg:text-3xl">
+                                Full Stack Developer!
+                            </strong>
                     </h1>
 
                     <p className="mb-5 max-w-sm text-base font-medium leading-relaxed text-text-primary sm:mb-8 sm:text-xl">
-                        Somewhere between code & creativity. I build digital things with curiosity, thoughtful code and a little personality.
+                        Somewhere between code & creativity. I build digital things with
+                         <span className="mx-2 inline-block"><ViewportRoughNotation
+                            type="circle"
+                            show
+                            color="#8B6FF7"
+                            strokeWidth={2}
+                            animationDuration={800}
+                        > curiosity</ViewportRoughNotation></span>, thoughtful code and a little personality.
                     </p>
 
                     <div className="flex flex-wrap items-center gap-4 sm:gap-6">
@@ -95,16 +183,7 @@ export function Hero() {
                     <Doodle className="absolute bottom-4 right-4 z-10 w-20 -rotate-6 text-primary sm:w-32" />
 
                     <div className="reveal-on-load relative z-10 w-full rounded-2xl border border-text-primary bg-[#1b191f] p-2 shadow-floating transition duration-500 ease-out hover:-translate-y-1 hover:shadow-xl sm:-rotate-2 sm:p-3 motion-reduce:transition-none motion-reduce:hover:transform-none">
-                        <svg
-                            aria-hidden="true"
-                            className="pointer-events-none absolute left-0 top-0 z-20 hidden w-36 -translate-x-2/3 -translate-y-2/3 -rotate-3 text-text-primary md:block lg:w-52 lg:-translate-x-3/4"
-                            viewBox="0 0 176 112"
-                            fill="none"
-                        >
-                            <path d="M164 76C132 18 68 14 18 66" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="4" />
-                            <path d="M18 66L33 64" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="4" />
-                            <path d="M18 66L26 52" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="4" />
-                        </svg>
+                        <HeroTerminalArrow />
                         <div className="overflow-hidden rounded-xl border border-white/10 bg-[#211f27]">
                             <div className="flex items-center justify-between border-b border-white/10 bg-[#2c2934] px-3 py-2 sm:px-4 sm:py-3">
                                 <div className="flex items-center gap-2" aria-hidden="true">
