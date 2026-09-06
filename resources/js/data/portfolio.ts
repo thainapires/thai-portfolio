@@ -188,9 +188,10 @@ export const navItems = [
     {label: 'Home', href: '#top' },
     { label: 'About', href: '#about' },
     { label: 'Skills', href: '#stack' },
-    { label: 'Work', href: '#work' },
+    { label: 'Experience', href: '#journey' },
     { label: 'Projects', href: '#projects' },
     { label: 'More', href: '#more' },
+    { label: 'Education', href: '#education' },
     { label: 'Contact', href: '#contact' },
 ];
 

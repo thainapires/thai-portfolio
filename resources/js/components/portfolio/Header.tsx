@@ -1,5 +1,5 @@
 import { type MouseEvent, useEffect, useRef, useState } from 'react';
-import { FaBars, FaMoon, FaSun, FaXmark } from 'react-icons/fa6';
+import { FaBars, FaXmark } from 'react-icons/fa6';
 import { ViewportRoughNotation } from '@/components/ui/ViewportRoughNotation';
 
 import { navItems } from '@/data/portfolio';
@@ -117,12 +117,12 @@ export function Header() {
     }
 
     return (
-        <header className="portfolio-container fixed left-1/2 top-0 z-50 grid min-h-24 -translate-x-1/2 grid-cols-[1fr_auto] items-center gap-3 bg-background/90 py-4 backdrop-blur-md sm:gap-6 lg:min-h-28 lg:grid-cols-[1fr_auto_1fr] lg:gap-8 lg:py-0">
+        <header className="portfolio-container fixed left-1/2 top-0 z-50 grid min-h-24 -translate-x-1/2 grid-cols-[1fr_auto] items-center gap-3 bg-background/90 py-4 backdrop-blur-md sm:gap-6 lg:min-h-28 lg:grid-cols-[auto_1fr] lg:gap-8 lg:py-0">
             <a className="whitespace-nowrap text-xl font-extrabold sm:text-2xl lg:text-[1.3rem]" href="#top" aria-label="Thainá dev. home">
                 Thainá <span className="text-primary">dev.</span>
             </a>
 
-            <nav className="hidden items-center gap-10 text-sm xl:text-base font-bold text-text-primary lg:flex xl:gap-16" aria-label="Primary navigation">
+            <nav className="hidden justify-self-end items-center gap-10 text-sm font-bold text-text-primary lg:flex xl:gap-16 xl:text-base" aria-label="Primary navigation">
                 {navItems.map((item) => (
                     <a
                         className="link-hover-primary group relative inline-block py-2 uppercase"
@@ -137,7 +137,8 @@ export function Header() {
                 ))}
             </nav>
 
-            <div className="flex items-center gap-3 justify-self-end">
+            <div className="flex items-center gap-3 justify-self-end lg:hidden">
+                {/*
                 <button className="grid h-10 grid-cols-[16px_28px_16px] items-center gap-1 rounded-pill border border-border bg-white/45 px-2 text-text-primary sm:grid-cols-[20px_34px_20px] sm:gap-2 sm:px-3" type="button" aria-label="Alternar tema visual">
                     <FaSun size={14} aria-hidden="true" />
 
@@ -145,6 +146,7 @@ export function Header() {
 
                     <FaMoon size={14} aria-hidden="true" />
                 </button>
+                */}
 
                 <button className="grid size-11 place-items-center rounded-pill border border-border bg-surface lg:hidden" type="button" aria-label="Abrir menu" aria-expanded={isOpen} onClick={() => setIsOpen((value) => !value)}>
                     {isOpen ? <FaXmark size={20} /> : <FaBars size={20} />}
