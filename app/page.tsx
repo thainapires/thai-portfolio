@@ -1,3 +1,5 @@
+'use client';
+
 import { AboutMe } from '@/components/portfolio/AboutMe';
 import { ContactCTA } from '@/components/portfolio/ContactCTA';
 import { FeaturedProjects } from '@/components/portfolio/FeaturedProjects';

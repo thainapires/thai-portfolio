@@ -1,51 +1,51 @@
 # Portfolio Thainá Pires
 
-Portfolio pessoal desenvolvido com React, Vite, TypeScript e Tailwind CSS.
+Portfolio pessoal desenvolvido com Next.js, React, TypeScript e Tailwind CSS.
 
 ## Como rodar
 
 Instale as dependências:
 
-```bash
+~~~bash
 npm install
-```
+~~~
 
 Suba o servidor de desenvolvimento:
 
-```bash
+~~~bash
 npm run dev
-```
+~~~
 
-Depois acesse a URL exibida pelo Vite, normalmente:
+Depois acesse a URL exibida pelo Next, normalmente:
 
-```text
-http://127.0.0.1:5173
-```
+~~~text
+http://localhost:3000
+~~~
 
 ## Comandos úteis
 
 Build de produção:
 
-```bash
+~~~bash
 npm run build
-```
+~~~
 
 Checar TypeScript:
 
-```bash
+~~~bash
 npm run typecheck
-```
+~~~
 
 Pré-visualizar o build localmente:
 
-```bash
-npm run preview
-```
+~~~bash
+npm run start
+~~~
 
 ## Deploy
 
-Para Vercel ou outro host estático:
+Para Vercel:
 
-- Framework: Vite
-- Build command: `npm run build`
-- Output directory: `dist`
+- Framework: Next.js
+- Build command: npm run build
+- Output directory: padrão do Next.js

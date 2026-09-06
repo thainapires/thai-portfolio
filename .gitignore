@@ -4,6 +4,7 @@
 .env.*
 /node_modules
 /dist
+/.next
 /.codex
 /.cursor
 /.idea
@@ -14,3 +15,4 @@
 .codex/*
 Thumbs.db
 .playwright-mcp/
+tsconfig.tsbuildinfo
