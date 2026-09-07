@@ -115,7 +115,7 @@ function HeroTerminalArrow() {
 
 export function Hero() {
     return (
-        <section id="top" className="relative -mt-24 grid min-h-svh flex-1 overflow-x-hidden overflow-y-visible lg:-mt-28">
+        <section id="top" className="relative grid flex-1 overflow-x-hidden overflow-y-visible lg:min-h-svh lg:-mt-28">
             <div className="pointer-events-none absolute inset-0 overflow-x-hidden overflow-y-visible" aria-hidden="true">
                 <img
                     className="absolute z-0 hidden h-auto max-w-none select-none lg:block lg:-bottom-0 lg:-right-0 lg:w-100 opacity-50"
@@ -124,8 +124,8 @@ export function Hero() {
                 />
             </div>
 
-            <Container className="relative z-10 grid min-h-full items-center justify-center gap-10 py-8 sm:py-10 md:grid-cols-2 md:gap-8 lg:gap-0 lg:py-16 xl:py-20">
-                <div className="reveal-on-load relative z-10 w-full max-w-md min-w-0 md:max-w-lg lg:max-w-md lg:justify-self-end xl:max-w-lg">
+            <Container className="relative z-10 grid items-center justify-center gap-6 py-8 sm:gap-7 sm:py-10 lg:min-h-full md:grid-cols-[minmax(0,22rem)_minmax(0,28rem)] md:gap-4 lg:grid-cols-[minmax(0,28rem)_minmax(0,36rem)] lg:gap-8 lg:py-16 xl:py-20">
+                <div className="reveal-on-load relative z-10 mx-auto w-full max-w-md min-w-0 text-center sm:max-w-lg md:mx-0 md:text-left md:justify-self-end lg:max-w-md xl:max-w-lg">
                     <p className="mb-2 text-lg font-medium sm:mb-3 sm:text-2xl">
                         <span className="relative inline-block">
                             <img
@@ -144,12 +144,12 @@ export function Hero() {
                                 Thainá
                             </span>
                         </span>
-                            <strong className="ml-14 mt-1 block w-fit -rotate-3 font-hand text-4xl font-bold text-primary sm:ml-24 sm:text-6xl lg:text-3xl">
+                            <strong className="mx-auto mt-2 block w-fit -rotate-3 font-hand text-4xl font-bold text-primary sm:text-6xl md:mx-0 md:ml-16 lg:text-5xl">
                                 Full Stack Developer!
                             </strong>
                     </h1>
 
-                    <p className="mb-5 max-w-sm text-base font-medium leading-relaxed text-text-primary sm:mb-8 sm:text-xl">
+                    <p className="mx-auto mb-5 max-w-sm text-base font-medium leading-relaxed text-text-primary sm:mb-8 sm:text-xl md:mx-0">
                         Somewhere between code & creativity. I build digital things with
                          <span className="mx-2 inline-block"><ViewportRoughNotation
                             type="circle"
@@ -160,7 +160,7 @@ export function Hero() {
                         > curiosity</ViewportRoughNotation></span>, thoughtful code and a little personality.
                     </p>
 
-                    <div className="flex flex-wrap items-center gap-4 sm:gap-6">
+                    <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-6 md:justify-start">
                         <PrimaryButton className="min-h-11 px-5 text-xs sm:px-6" href="#about">
                             ABOUT ME
                             <FaArrowRight size={14} />
@@ -173,7 +173,8 @@ export function Hero() {
                     </div>
                 </div>
 
-                <div className="relative mx-auto grid w-full max-w-lg min-w-0 place-items-center px-3 py-4 sm:px-6 sm:py-8 md:px-0 md:py-0 lg:mx-0 lg:max-w-xl lg:justify-self-start" aria-label="Composição abstrata sobre desenvolvimento">
+                <div className="relative mx-auto grid w-full max-w-sm min-w-0 place-items-center px-2 pt-0 pb-4 sm:max-w-lg sm:px-4 sm:py-0 md:mx-0 md:max-w-md md:justify-self-start md:px-0 md:py-0 lg:max-w-xl">                   
+                    
                     <span aria-hidden="true" className="absolute right-4 top-0 aspect-square w-20 rotate-12 rounded-[42%_58%_48%_52%] bg-accent-pink-soft sm:w-32" />
 
                     <span aria-hidden="true" className="absolute bottom-0 left-0 aspect-square w-24 -rotate-12 rounded-[58%_42%_54%_46%] bg-accent-yellow-soft sm:w-40" />
