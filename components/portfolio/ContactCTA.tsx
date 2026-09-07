@@ -54,7 +54,7 @@ export function ContactCTA() {
                     <div className="relative z-3 grid gap-5 justify-self-start md:col-span-4 md:justify-self-end">
                         <Doodle className="w-36 rotate-[-8deg] text-primary sm:w-44" />
 
-                        <PrimaryButton href="mailto:hello@thainapires.dev">
+                        <PrimaryButton href="mailto:thainapires.dev@gmail.com">
                             GET IN TOUCH
                             <ArrowRight size={16} />
                         </PrimaryButton>

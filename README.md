@@ -194,4 +194,4 @@ As variáveis de ambiente usadas pelo gráfico de contribuições também ficam 
 
 - GitHub: [github.com/thainapires](https://github.com/thainapires)
 - LinkedIn: [linkedin.com/in/thainapires](https://www.linkedin.com/in/thainapires)
-- Email: [thainapiresdev@gmail.com](mailto:thainapiresdev@gmail.com)
+- Email: [thainapires.dev@gmail.com](mailto:thainapires.dev@gmail.com)

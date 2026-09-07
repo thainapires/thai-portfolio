@@ -208,7 +208,7 @@ export const socialLinks: SocialLink[] = [
     },
     {
         label: 'Email',
-        href: 'mailto:thainapiresdev@gmail.com',
+        href: 'mailto:thainapires.dev@gmail.com',
         icon: FaEnvelope,
     },
 ];
