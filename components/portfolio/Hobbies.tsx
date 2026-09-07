@@ -37,8 +37,7 @@ export function Hobbies() {
                         Life outside the <em className="font-serif font-bold italic text-primary">terminal</em>.
                     </h2>
                     <p className="m-0 max-w-lg text-base leading-7 text-text-secondary sm:text-lg">
-                        A few things I've worked on professionally.<br className="hidden sm:block" />
-                        Different problems, real impact.
+                        The things that keep me curious, creative and inspired.
                     </p>
                 </div>
                 <div className="mt-8 grid gap-7 sm:grid-cols-2 lg:grid-cols-5 lg:gap-5 xl:gap-7">
