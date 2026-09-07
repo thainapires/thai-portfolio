@@ -187,7 +187,7 @@ export function ContributionActivity({ calendar }: { calendar: ContributionCalen
                     </div>
                 </div>
 
-                <div className="mt-10 rounded-card border border-border bg-surface/85 p-4 shadow-card sm:p-6 lg:p-8">
+                <div className="hidden md:block mt-10 rounded-card border border-border bg-surface/85 p-4 shadow-card sm:p-6 lg:p-8">
                     <ContributionGrid calendar={calendar} />
 
                     {!isConfigured && (

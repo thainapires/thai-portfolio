@@ -1,9 +1,14 @@
+import { useState } from 'react';
+
 import { mainStackSkills, otherStackSkills } from '@/data/portfolio';
 import type { StackSkill, StackTool } from '@/data/portfolio';
+
 import { Star } from '@/components/portfolio/decorations/Star';
 import { Container } from '@/components/ui/Container';
 import { SectionLabel } from '@/components/ui/SectionLabel';
-import { motion, useReducedMotion } from 'motion/react';
+
+import { AnimatePresence, motion, useReducedMotion } from 'motion/react';
+
 import { ViewportRoughNotation } from '@/components/ui/ViewportRoughNotation';
 
 function SkillCard({ skill }: { skill: StackSkill }) {
@@ -15,7 +20,8 @@ function SkillCard({ skill }: { skill: StackSkill }) {
 
             <img className={`pointer-events-none absolute -top-2 z-20 w-24 max-w-[58%] opacity-85 drop-shadow-sm ${skill.tapeClassName}`} src="/images/assets/tape-skills.png" alt="" aria-hidden="true" />
 
-            <Icon className="mt-3 relative z-10 mb-6 size-16 text-primary transition-transform duration-200 group-hover:scale-105 sm:size-20 motion-reduce:transition-none motion-reduce:group-hover:scale-100" aria-hidden="true" />
+            <Icon className="relative z-10 mt-3 mb-6 size-16 text-primary transition-transform duration-200 group-hover:scale-105 sm:size-20 motion-reduce:transition-none motion-reduce:group-hover:scale-100" aria-hidden="true" />
+
             <h3 className="relative z-10 m-0 text-base font-extrabold leading-tight sm:text-lg">{skill.name}</h3>
         </article>
     );
@@ -42,41 +48,15 @@ function LearningArrow() {
 
     if (shouldReduceMotion) {
         return (
-            <svg
-                aria-hidden="true"
-                className="absolute -right-14 top-14 w-20 rotate-6 text-primary-strong/75"
-                viewBox="0 0 72 118"
-                fill="none"
-            >
-                <path
-                    d={body}
-                    stroke="currentColor"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="3"
-                />
-
-                <path
-                    d={head}
-                    stroke="currentColor"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="3"
-                />
+            <svg aria-hidden="true" className="absolute -right-14 top-14 w-20 rotate-6 text-primary-strong/75" viewBox="0 0 72 118" fill="none">
+                <path d={body} stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" />
+                <path d={head} stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" />
             </svg>
         );
     }
 
     return (
-        <motion.svg
-            aria-hidden="true"
-            className="absolute -right-14 top-14 w-20 rotate-6 text-primary-strong/75"
-            viewBox="0 0 72 118"
-            fill="none"
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.8 }}
-        >
+        <motion.svg aria-hidden="true" className="absolute -right-14 top-14 w-20 rotate-6 text-primary-strong/75" viewBox="0 0 72 118" fill="none" initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.8 }}>
             <motion.path
                 d={body}
                 stroke="currentColor"
@@ -118,9 +98,13 @@ function LearningNote() {
     return (
         <div className="pointer-events-none absolute right-[12%] top-24 hidden text-primary-strong/75 xl:block" aria-hidden="true">
             <span className="absolute -left-16 top-0 size-12 -rotate-12 bg-current [mask-image:url('/images/assets/handdrawn-star.svg')] [mask-position:center] [mask-repeat:no-repeat] [mask-size:contain] [-webkit-mask-image:url('/images/assets/handdrawn-star.svg')] [-webkit-mask-position:center] [-webkit-mask-repeat:no-repeat] [-webkit-mask-size:contain]" />
+
             <span className="block rotate-6 font-hand text-3xl font-semibold leading-tight">
-                always learning<br />new things
+                always learning
+                <br />
+                new things
             </span>
+
             <LearningArrow />
         </div>
     );
@@ -130,30 +114,25 @@ function LoveStatement() {
     return (
         <p className="relative mx-auto mt-12 mb-7 max-w-3xl text-center font-mono text-base leading-8 text-text-primary sm:text-lg">
             <span aria-hidden="true">... </span>
+
             and other tools and technologies I{' '}
-            <ViewportRoughNotation
-                type="underline" 
-                show 
-                color="#6049bc"
-                strokeWidth={2}
-                animationDuration={800}
-            >
+
+            <ViewportRoughNotation type="underline" show color="#6049bc" strokeWidth={2} animationDuration={800}>
                 <span className="relative inline-block font-hand text-3xl font-bold leading-none text-primary-strong">
                     love
-                    <img 
-                        src="/images/assets/heart.svg" 
-                        className="absolute -right-2 -top-3 w-3 rotate-12 opacity-90 sm:w-4" 
-                        alt="" 
-                        aria-hidden="true" 
-                    />
+
+                    <img src="/images/assets/heart.svg" className="absolute -right-2 -top-3 w-3 rotate-12 opacity-90 sm:w-4" alt="" aria-hidden="true" />
                 </span>
             </ViewportRoughNotation>{' '}
+
             working with.
         </p>
     );
 }
 
 export function SkillsStack() {
+    const [showAllTools, setShowAllTools] = useState(false);
+
     return (
         <section id="stack" className="relative scroll-mt-24 overflow-hidden border-y border-border py-14 sm:py-16 lg:scroll-mt-28 lg:py-20">
             <LearningNote />
@@ -161,20 +140,16 @@ export function SkillsStack() {
             <Container>
                 <div className="max-w-2xl">
                     <SectionLabel>SKILLS</SectionLabel>
+
                     <h2 className="mt-3 mb-4 text-4xl font-extrabold leading-tight sm:text-5xl lg:text-6xl">
-                        My {' '} 
-                        <ViewportRoughNotation 
-                            type="highlight" 
-                            show 
-                            color="#D5CBFE"
-                            strokeWidth={2}
-                            animationDuration={800}
-                        >
+                        My{' '}
+                        <ViewportRoughNotation type="highlight" show color="#D5CBFE" strokeWidth={2} animationDuration={800}>
                             creative
-                        </ViewportRoughNotation>
-                        {' '} toolkit
+                        </ViewportRoughNotation>{' '}
+                        toolkit
                         <span className="text-primary">.</span>
                     </h2>
+
                     <p className="m-0 max-w-xl text-base leading-7 text-text-secondary sm:text-lg">
                         Languages, frameworks and tools I use to turn ideas into working things.
                     </p>
@@ -189,11 +164,45 @@ export function SkillsStack() {
                 <LoveStatement />
 
                 <ul className="mx-auto flex max-w-6xl list-none flex-wrap justify-center gap-3 p-0 sm:gap-4">
-                    {otherStackSkills.map((skill) => (
-                        <SkillBadge key={skill.name} skill={skill} />
+                    {otherStackSkills.map((skill, index) => (
+                        <li key={skill.name} className={`${!showAllTools && index >= 4 ? 'hidden lg:block' : ''}`}>
+                            <SkillBadgeContent skill={skill} />
+                        </li>
                     ))}
                 </ul>
+
+                {otherStackSkills.length > 4 && (
+                    <div className="mt-6 flex justify-center lg:hidden">
+                        <button
+                            type="button"
+                            onClick={() => setShowAllTools((current) => !current)}
+                            aria-expanded={showAllTools}
+                            className="inline-flex items-center gap-2 rounded-full border border-border bg-surface px-5 py-2.5 text-sm font-bold text-text-primary shadow-sm transition-[background-color,border-color,transform] duration-200 hover:-translate-y-0.5 hover:border-primary-soft hover:bg-primary-soft/20 motion-reduce:transition-none motion-reduce:hover:transform-none"
+                        >
+                            {showAllTools ? (
+                                <>
+                                    show less <span aria-hidden="true">↑</span>
+                                </>
+                            ) : (
+                                <>
+                                    show more <span aria-hidden="true">→</span>
+                                </>
+                            )}
+                        </button>
+                    </div>
+                )}
             </Container>
         </section>
+    );
+}
+
+function SkillBadgeContent({ skill }: { skill: StackTool }) {
+    const Icon = skill.icon;
+
+    return (
+        <span className="group inline-flex items-center gap-2 rounded-pill border border-border bg-surface/80 px-4 py-2 text-sm font-bold text-text-primary shadow-card transition-[background-color,border-color,transform] duration-200 hover:-translate-y-0.5 hover:border-primary-soft hover:bg-primary-soft/35 motion-reduce:transition-none motion-reduce:hover:transform-none">
+            <Icon className="size-5 text-primary transition-transform duration-200 group-hover:-rotate-6 motion-reduce:transition-none motion-reduce:group-hover:rotate-0" aria-hidden="true" />
+            {skill.name}
+        </span>
     );
 }

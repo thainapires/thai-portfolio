@@ -8,10 +8,19 @@ function HobbyExtraBadges() {
         <ul className="mx-auto mt-9 flex max-w-5xl list-none flex-wrap justify-center gap-3 p-0 sm:mt-10 sm:gap-4" aria-label="Other things I like">
             {hobbyExtras.map((item) => (
                 <li key={item.label}>
-                    <span className={`inline-flex items-center gap-2 rounded-pill border border-border bg-surface/90 px-3 py-2 text-xs font-extrabold lowercase leading-none text-text-primary shadow-card ${item.rotationClassName}`}>
-                        {item.emoji}{' '}
-                        {item.label}
-                    </span>
+                    {item.label != 'places I\'ve been' ? (
+                        <span className={`inline-flex items-center gap-2 rounded-pill border border-border bg-surface/90 px-3 py-2 text-xs font-extrabold lowercase leading-none text-text-primary shadow-card ${item.rotationClassName}`}>
+                            {item.emoji}{' '}
+                            {item.label}
+                        </span>
+                    ) : (
+                        <span
+                            className={`flex flex-col sm:inline-flex sm:flex-row items-center justify-center gap-1 rounded-pill border border-border bg-surface/90 px-3 py-2 text-center text-xs font-extrabold lowercase leading-none text-text-primary shadow-card ${item.rotationClassName}`}
+                        >
+                            {item.emoji}
+                            <span>{item.label}</span>
+                        </span>
+                    )}
                 </li>
             ))}
         </ul>

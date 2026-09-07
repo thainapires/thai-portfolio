@@ -185,7 +185,7 @@ export interface HobbyExtra {
 }
 
 export const navItems = [
-    {label: 'Home', href: '#top' },
+    { label: 'Home', href: '#top' },
     { label: 'About', href: '#about' },
     { label: 'Skills', href: '#stack' },
     { label: 'Experience', href: '#journey' },

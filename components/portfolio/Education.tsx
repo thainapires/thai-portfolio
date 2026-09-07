@@ -63,10 +63,10 @@ export function Education() {
                         <ol className="relative list-none space-y-10 p-0 sm:space-y-12">
                             <span className="absolute bottom-5 left-2.5 top-5 w-px bg-border sm:left-[7.5rem]" aria-hidden="true" />
                             {education.map((entry, index) => (
-                                <li className="relative grid gap-4 sm:grid-cols-[7rem_1rem_1fr] sm:gap-5" key={entry.period}>
+                                <li className="relative grid gap-4 pl-7 pt-1 sm:p-0 sm:grid-cols-[7rem_1rem_1fr] sm:gap-5" key={entry.period}>
                                     <time className="relative z-1 text-sm font-bold text-text-secondary sm:pt-1 sm:text-right">{entry.period}</time>
                                     <span className="absolute left-0 top-1.5 z-2 size-5 rounded-full border-4 border-surface bg-primary sm:static sm:mt-1 sm:size-4 sm:border-2" aria-hidden="true" />
-                                    <div className="relative pl-8 sm:pl-0">
+                                    <div className="relative">
                                         <div className="lg:max-w-[75%]">
                                             <h4 className="m-0 text-lg font-extrabold leading-tight sm:text-xl">{entry.title}</h4>
                                             <p className="mt-1 mb-0 text-sm font-medium text-text-secondary">{entry.institution}</p>

@@ -65,10 +65,10 @@ export function Journey() {
                 <ol id="journey-timeline" className="relative mt-12 list-none space-y-10 p-0 sm:mt-14 sm:space-y-12">
                     <span className="absolute bottom-5 left-2.5 top-5 w-px bg-border sm:left-[8.5rem]" aria-hidden="true" />
                     {visibleJourney.map((entry) => (
-                        <li className="relative grid gap-4 sm:grid-cols-[8rem_1rem_1fr] sm:gap-5" key={`${entry.period}-${entry.title}`}>
+                        <li className="relative grid gap-4 pl-7 pt-1 sm:p-0 sm:grid-cols-[8rem_1rem_1fr] sm:gap-5" key={`${entry.period}-${entry.title}`}>
                             <time className="relative z-1 text-sm font-bold text-text-secondary sm:pt-1 sm:text-right">{entry.period}</time>
                             <span className="absolute left-0 top-1.5 z-2 size-5 rounded-full border-4 border-background bg-primary sm:static sm:mt-1 sm:size-4 sm:border-2" aria-hidden="true" />
-                            <div className="pl-8 sm:pl-0">
+                            <div>
                                 <div className="flex flex-col justify-between gap-2 sm:flex-row sm:items-start sm:gap-6">
                                     <div>
                                         <h3 className="m-0 text-lg font-extrabold leading-tight sm:text-xl">{entry.title}</h3>
@@ -84,7 +84,7 @@ export function Journey() {
                         </li>
                     ))}
                 </ol>
-                <div className="mt-10 flex w-fit flex-wrap gap-2">
+                <div className="mt-10 flex w-full justify-center sm:justify-normal sm:w-fit flex-wrap gap-2">
                     {journey.length > 2 && (
                         <button
                             type="button"
