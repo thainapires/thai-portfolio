@@ -6,6 +6,7 @@ import { projects, socialLinks } from '@/data/portfolio';
 import { Container } from '@/components/ui/Container';
 import { SectionLabel } from '@/components/ui/SectionLabel';
 import { ViewportRoughNotation } from '../ui/ViewportRoughNotation';
+import { Hover3D } from '../ui/Hover3D';
 
 const githubProfileHref = socialLinks.find((link) => link.label === 'GitHub')?.href ?? 'https://github.com/thainapires';
 
@@ -117,29 +118,37 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
     const rotationClassName = index % 2 === 0 ? 'lg:hover:rotate-1' : 'lg:hover:-rotate-1';
 
     return (
-        <article className={`group relative flex min-w-0 flex-col rounded-card border border-border bg-surface p-4 shadow-card transition-[box-shadow,transform] duration-200 hover:-translate-y-1 hover:shadow-soft ${rotationClassName} motion-reduce:transition-none motion-reduce:hover:transform-none motion-reduce:hover:rotate-0`}>
-            {index === 0 && <img className="pointer-events-none absolute -left-5 top-2 z-3 w-22 -rotate-30 opacity-70" src="/images/assets/tape.png" alt="" aria-hidden="true" />}
-            {index === 1 && <ProjectBadge />}
+        <Hover3D className="h-full">
+            <article className={`group relative flex h-full min-w-0 flex-col rounded-card border border-border bg-surface p-4 shadow-card transition-[box-shadow,transform] duration-200 hover:-translate-y-1 hover:shadow-soft ${rotationClassName} motion-reduce:transition-none motion-reduce:hover:transform-none motion-reduce:hover:rotate-0`} style={{ transformStyle: 'preserve-3d' }}>
+                {index === 0 && <img className="pointer-events-none absolute -left-5 top-2 z-3 w-22 -rotate-30 opacity-70" src="/images/assets/tape.png" alt="" aria-hidden="true" style={{ transform: 'translateZ(34px)' }} />}
+                {index === 1 && (
+                    <div style={{ transform: 'translateZ(34px)' }}>
+                        <ProjectBadge />
+                    </div>
+                )}
 
-            <ProjectImage project={project} />
-
-            <div className="flex flex-1 flex-col pt-5">
-                <div className="flex items-baseline gap-4">
-                    <span className="text-3xl font-extrabold leading-none text-primary sm:text-4xl">{project.number}</span>
-                    <h3 className="m-0 text-xl font-extrabold leading-tight sm:text-2xl">{project.title}</h3>
+                <div style={{ transform: 'translateZ(30px)' }}>
+                    <ProjectImage project={project} />
                 </div>
 
-                <p className="mt-3 line-clamp-2 text-sm leading-6 text-text-secondary">{project.description}</p>
+                <div className="flex flex-1 flex-col pt-5" style={{ transform: 'translateZ(18px)' }}>
+                    <div className="flex items-baseline gap-4" style={{ transform: 'translateZ(10px)' }}>
+                        <span className="text-3xl font-extrabold leading-none text-primary sm:text-4xl">{project.number}</span>
+                        <h3 className="m-0 text-xl font-extrabold leading-tight sm:text-2xl">{project.title}</h3>
+                    </div>
 
-                <div className="mt-4">
-                    <TechTags technologies={project.stats} />
-                </div>
+                    <p className="mt-3 line-clamp-2 text-sm leading-6 text-text-secondary">{project.description}</p>
 
-                <div className="mt-6">
-                    <ProjectLinks project={project} />
+                    <div className="mt-4" style={{ transform: 'translateZ(8px)' }}>
+                        <TechTags technologies={project.stats} />
+                    </div>
+
+                    <div className="mt-6" style={{ transform: 'translateZ(12px)' }}>
+                        <ProjectLinks project={project} />
+                    </div>
                 </div>
-            </div>
-        </article>
+            </article>
+        </Hover3D>
     );
 }
 
@@ -170,7 +179,7 @@ export function FeaturedProjects() {
 
                 {projects.length > 0 && (
                     <div className="mt-10 sm:mt-12">
-                        <div className="mt-4 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+                        <div className="mt-4 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
                             {projects.map((project, index) => (
                                 <ProjectCard key={`${project.id}-${project.number}`} project={project} index={index} />
                             ))}
