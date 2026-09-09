@@ -347,6 +347,18 @@ export const projects: Project[] = [
         imageAlt: 'Schedulynx project screenshot placeholder',
         stats: ['Scheduling', 'Calendar Integration', 'OAuth'],
     },
+    {
+        id: 'colormixer',
+        number: '04',
+        title: 'ColorMixer',
+        description: 'Mix two colors and see the result in real time.',
+        href: 'https://color-mixer-theta.vercel.app',
+        githubHref: 'https://github.com/thainapires/color-mixer',
+        accent: 'yellow',
+        imageSrc: '/images/projects/color-mixer.png',
+        imageAlt: 'ColorMixer project screenshot placeholder',
+        stats: ['Colors', 'Creativity'],
+    },
 ];
 
 export const professionalHighlights: ProfessionalHighlight[] = [

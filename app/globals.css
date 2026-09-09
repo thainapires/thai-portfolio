@@ -200,6 +200,20 @@
     transform: translateX(-50%);
 }
 
+.portfolio-tools-marquee {
+    animation: portfolio-tools-marquee 34s linear infinite;
+}
+
+.portfolio-tools-marquee--reverse {
+    animation-direction: reverse;
+    animation-duration: 40s;
+}
+
+@keyframes portfolio-tools-marquee {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+}
+
 .reveal-on-load { animation: enter .7s ease both; }
 
 @keyframes enter {

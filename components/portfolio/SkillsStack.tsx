@@ -1,13 +1,10 @@
-import { useState } from 'react';
-
 import { mainStackSkills, otherStackSkills } from '@/data/portfolio';
 import type { StackSkill, StackTool } from '@/data/portfolio';
 
-import { Star } from '@/components/portfolio/decorations/Star';
 import { Container } from '@/components/ui/Container';
 import { SectionLabel } from '@/components/ui/SectionLabel';
 
-import { AnimatePresence, motion, useReducedMotion } from 'motion/react';
+import { motion, useReducedMotion } from 'motion/react';
 
 import { ViewportRoughNotation } from '@/components/ui/ViewportRoughNotation';
 
@@ -24,19 +21,6 @@ function SkillCard({ skill }: { skill: StackSkill }) {
 
             <h3 className="relative z-10 m-0 text-base font-extrabold leading-tight sm:text-lg">{skill.name}</h3>
         </article>
-    );
-}
-
-function SkillBadge({ skill }: { skill: StackTool }) {
-    const Icon = skill.icon;
-
-    return (
-        <li>
-            <span className="group inline-flex items-center gap-2 rounded-pill border border-border bg-surface/80 px-4 py-2 text-sm font-bold text-text-primary shadow-card transition-[background-color,border-color,transform] duration-200 hover:-translate-y-0.5 hover:border-primary-soft hover:bg-primary-soft/35 motion-reduce:transition-none motion-reduce:hover:transform-none">
-                <Icon className="size-5 text-primary transition-transform duration-200 group-hover:-rotate-6 motion-reduce:transition-none motion-reduce:group-hover:rotate-0" aria-hidden="true" />
-                {skill.name}
-            </span>
-        </li>
     );
 }
 
@@ -131,7 +115,7 @@ function LoveStatement() {
 }
 
 export function SkillsStack() {
-    const [showAllTools, setShowAllTools] = useState(false);
+    const shouldReduceMotion = useReducedMotion();
 
     return (
         <section id="stack" className="relative scroll-mt-24 overflow-hidden border-y border-border py-14 sm:py-16 lg:scroll-mt-28 lg:py-20">
@@ -163,36 +147,64 @@ export function SkillsStack() {
 
                 <LoveStatement />
 
-                <ul className="mx-auto flex max-w-6xl list-none flex-wrap justify-center gap-3 p-0 sm:gap-4">
-                    {otherStackSkills.map((skill, index) => (
-                        <li key={skill.name} className={`${!showAllTools && index >= 4 ? 'hidden lg:block' : ''}`}>
+                <OtherToolsMobile shouldReduceMotion={shouldReduceMotion} />
+
+                <ul className="mx-auto hidden max-w-6xl list-none flex-wrap justify-center gap-4 p-0 lg:flex">
+                    {otherStackSkills.map((skill) => (
+                        <li key={skill.name}>
                             <SkillBadgeContent skill={skill} />
                         </li>
                     ))}
                 </ul>
-
-                {otherStackSkills.length > 4 && (
-                    <div className="mt-6 flex justify-center lg:hidden">
-                        <button
-                            type="button"
-                            onClick={() => setShowAllTools((current) => !current)}
-                            aria-expanded={showAllTools}
-                            className="inline-flex items-center gap-2 rounded-full border border-border bg-surface px-5 py-2.5 text-sm font-bold text-text-primary shadow-sm transition-[background-color,border-color,transform] duration-200 hover:-translate-y-0.5 hover:border-primary-soft hover:bg-primary-soft/20 motion-reduce:transition-none motion-reduce:hover:transform-none"
-                        >
-                            {showAllTools ? (
-                                <>
-                                    show less <span aria-hidden="true">↑</span>
-                                </>
-                            ) : (
-                                <>
-                                    show more <span aria-hidden="true">→</span>
-                                </>
-                            )}
-                        </button>
-                    </div>
-                )}
             </Container>
         </section>
+    );
+}
+
+function OtherToolsMobile({ shouldReduceMotion }: { shouldReduceMotion: boolean | null }) {
+    if (shouldReduceMotion) {
+        return (
+            <ul className="mx-auto flex max-w-3xl list-none flex-wrap justify-center gap-3 p-0 sm:gap-4 lg:hidden">
+                {otherStackSkills.map((skill) => (
+                    <li key={skill.name}>
+                        <SkillBadgeContent skill={skill} />
+                    </li>
+                ))}
+            </ul>
+        );
+    }
+
+    const rows = [
+        otherStackSkills.filter((_, index) => index % 2 === 0),
+        otherStackSkills.filter((_, index) => index % 2 === 1),
+    ];
+
+    return (
+        <div className="relative -mx-4 flex flex-col gap-3 overflow-hidden py-1 [mask-image:linear-gradient(90deg,transparent,black_12%,black_88%,transparent)] sm:-mx-6 lg:hidden [-webkit-mask-image:linear-gradient(90deg,transparent,black_12%,black_88%,transparent)]">
+            <ul className="sr-only">
+                {otherStackSkills.map((skill) => (
+                    <li key={skill.name}>{skill.name}</li>
+                ))}
+            </ul>
+
+            {rows.map((row, rowIndex) => (
+                <div
+                    key={rowIndex}
+                    aria-hidden="true"
+                    className={`portfolio-tools-marquee flex w-max ${rowIndex === 1 ? 'portfolio-tools-marquee--reverse' : ''}`}
+                >
+                    {[0, 1].map((loopIndex) => (
+                        <ul key={loopIndex} className="flex list-none gap-3 p-0 pr-3 sm:gap-4 sm:pr-4">
+                            {row.map((skill) => (
+                                <li key={`${skill.name}-${loopIndex}`} className="shrink-0">
+                                    <SkillBadgeContent skill={skill} />
+                                </li>
+                            ))}
+                        </ul>
+                    ))}
+                </div>
+            ))}
+        </div>
     );
 }
 
