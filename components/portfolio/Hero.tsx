@@ -7,6 +7,7 @@ import { ViewportRoughNotation } from '@/components/ui/ViewportRoughNotation';
 
 import { Doodle } from './decorations/Doodle';
 import { DotPattern } from './decorations/DotPattern';
+import { TypingHeroTitle } from './TypingHeroTitle';
 
 const terminalLines = [
     {
@@ -144,9 +145,7 @@ export function Hero() {
                                 Thainá
                             </span>
                         </span>
-                            <strong className="mx-auto mt-2 block w-fit -rotate-3 font-hand text-4xl font-bold text-primary sm:text-6xl md:mx-0 md:ml-16 lg:text-5xl">
-                                Full Stack Developer!
-                            </strong>
+                            <TypingHeroTitle />
                     </h1>
 
                     <p className="mx-auto mb-5 max-w-sm text-base font-medium leading-relaxed text-text-primary sm:mb-8 sm:text-xl md:mx-0">

@@ -8,7 +8,6 @@ import { ViewportRoughNotation } from '@/components/ui/ViewportRoughNotation';
 
 import { AboutPortraitCollage } from './AboutPortraitCollage';
 import { Doodle } from './decorations/Doodle';
-import CountUp from '../ui/CountUp';
 
 const aboutImageSrc = '/images/me.png';
 
