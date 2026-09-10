@@ -139,7 +139,8 @@ export interface ProfessionalHighlight {
 }
 
 export interface Statistic {
-    value: string;
+    value?: number;
+    subvalue?: string;
     label: string;
 }
 
@@ -444,15 +445,16 @@ export const professionalHighlights: ProfessionalHighlight[] = [
 
 export const statistics: Statistic[] = [
     {
-        value: '5+',
+        value: 5,
+        subvalue: '+',
         label: 'Years of experience',
     },
     {
-        value: '1',
-        label: 'Computer Science degree',
+        value: 2,
+        label: 'Languages spoken',
     },
     {
-        value: '∞',
+        subvalue: '∞',
         label: 'Things left to explore',
     },
 ];

@@ -161,13 +161,13 @@ export function Hero() {
                     </p>
 
                     <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-6 md:justify-start">
-                        <PrimaryButton className="min-h-11 px-5 text-xs sm:px-6" href="#about">
-                            ABOUT ME
+                        <PrimaryButton className="min-h-11 px-5 text-xs sm:px-6 uppercase" href="#journey">
+                            My work
                             <FaArrowRight size={14} />
                         </PrimaryButton>
 
-                        <TextButton className="text-xs" href="#work">
-                            VIEW MY WORK
+                        <TextButton className="text-xs uppercase" href="#about">
+                            About me
                             <FaArrowDown size={14} />
                         </TextButton>
                     </div>

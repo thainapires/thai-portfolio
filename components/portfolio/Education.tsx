@@ -7,17 +7,34 @@ import { ViewportRoughNotation } from '../ui/ViewportRoughNotation';
 import { Doodle } from './decorations/Doodle';
 import { Star } from './decorations/Star';
 import { LiaLinkedin } from 'react-icons/lia';
+import { motion } from 'motion/react';
 
 const certificationsHref = 'https://www.linkedin.com/in/thainapires/details/certifications/';
 const educationHref = 'https://www.linkedin.com/in/thainapires/details/education/';
+const noteHoverAnimation = {
+    y: -6,
+    scale: 1.04,
+};
+const noteHoverTransition = {
+    type: 'spring',
+    stiffness: 280,
+    damping: 18,
+} as const;
 
 function EducationNote({ label, className = '' }: { label: string; className?: string }) {
     return (
         <div className={`pointer-events-none absolute hidden lg:block ${className}`} aria-hidden="true">
-            <div className="relative rounded-sm border border-border bg-background px-4 py-2 shadow-card">
+            <motion.div
+                className="pointer-events-auto relative origin-top rounded-sm border border-border bg-background px-4 py-2 shadow-card"
+                whileHover={noteHoverAnimation}
+                transition={noteHoverTransition}
+            >
                 <img className="absolute -top-3 left-1/2 w-12 -translate-x-1/2 -rotate-2 opacity-80" src="/images/assets/tape.png" alt="" />
-                <span className="font-hand text-xl font-semibold leading-none text-text-primary">{label}</span>
-            </div>
+
+                <span className="font-hand text-xl font-semibold leading-none text-text-primary">
+                    {label}
+                </span>
+            </motion.div>
         </div>
     );
 }
