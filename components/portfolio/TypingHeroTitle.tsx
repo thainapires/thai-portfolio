@@ -4,8 +4,8 @@ import { useReducedMotion } from 'motion/react';
 const titles = [
     'Full Stack Developer',
     'Creative Coder',
-    'Cyclist',
-    'Curious Builder',
+    'Cycling Enthusiast',
+    'Traveler at heart',
     'Lifelong Learner',
 ];
 
