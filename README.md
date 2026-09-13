@@ -14,7 +14,7 @@ Também integrei minhas contribuições do GitHub e GitLab em um único gráfico
 
 O portfólio está publicado na Vercel:
 
-[thaina-pires.vercel.app](https://thaina-pires.vercel.app)
+[thaipires.com](https://thaipires.com)
 
 ![Portfolio preview](./artifacts/portfolio-showcase/portfolio.gif)
 
