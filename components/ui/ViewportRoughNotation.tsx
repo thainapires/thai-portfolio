@@ -7,12 +7,14 @@ import {
 type ViewportRoughNotationProps = RoughNotationProps & {
     rootMargin?: string;
     threshold?: number;
+    spanClass?: string;
 };
 
 export function ViewportRoughNotation({
     rootMargin = '0px 0px -10% 0px',
     show = true,
     threshold = 0.1,
+    spanClass = "",
     ...props
 }: ViewportRoughNotationProps) {
     const elementRef = useRef<HTMLSpanElement>(null);
@@ -52,7 +54,7 @@ export function ViewportRoughNotation({
     }, [rootMargin, threshold]);
 
     return (
-        <span ref={elementRef}>
+        <span ref={elementRef} className={`${spanClass}`}>
             <RoughNotation {...props} show={show && hasEnteredViewport} />
         </span>
     );

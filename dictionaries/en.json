@@ -8,6 +8,7 @@
     "label": "Choose language",
     "languages": { "en": "English", "pt-BR": "Brazilian Portuguese" }
   },
+  "theme": { "toggle": "Switch color theme" },
   "navigation": {
     "label": "Primary navigation",
     "mobileLabel": "Mobile navigation",

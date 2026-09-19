@@ -42,7 +42,7 @@ export function AboutPortraitCollage({ imageSrc }: AboutPortraitCollageProps) {
 
             <motion.span
                 style={styles.queer}
-                className="pointer-events-none absolute left-0 top-28 z-5 inline-flex -translate-x-1/4 -rotate-6 items-center gap-1.5 rounded-pill border border-border bg-surface/90 px-2 py-1 text-[0.68rem] font-extrabold lowercase leading-none text-text-primary shadow-card sm:left-1 sm:top-32 sm:px-2.5 sm:py-1.5 sm:text-xs"
+                className="pointer-events-none absolute left-0 top-28 z-5 inline-flex -translate-x-1/4 -rotate-6 items-center gap-1.5 rounded-pill border border-border dark:border-border/20 bg-badge/90 px-2 py-1 text-[0.68rem] font-extrabold lowercase leading-none text-text-primary dark:text-gray-900 shadow-card sm:left-1 sm:top-32 sm:px-2.5 sm:py-1.5 sm:text-xs"
                 aria-hidden="true"
             >
                 <img
@@ -56,7 +56,7 @@ export function AboutPortraitCollage({ imageSrc }: AboutPortraitCollageProps) {
 
             <motion.span
                 style={styles.age}
-                className="pointer-events-none absolute right-0 top-44 z-5 inline-flex translate-x-1/4 rotate-6 items-center rounded-pill border border-border bg-surface/90 px-2.5 py-1.5 text-xs font-extrabold leading-none text-text-primary shadow-card sm:right-1 sm:top-48"
+                className="pointer-events-none absolute right-0 top-44 z-5 inline-flex translate-x-1/4 rotate-6 items-center rounded-pill border border-border dark:border-border/20 bg-badge/90 px-2.5 py-1.5 text-xs font-extrabold leading-none text-text-primary dark:text-gray-900 shadow-card sm:right-1 sm:top-48"
                 aria-hidden="true"
             >
                 {t.age}

@@ -45,7 +45,7 @@ export function HobbyCard({ hobby }: HobbyCardProps) {
 
     return (
         <article className={`group relative overflow-visible rounded-md border border-border bg-surface/95 p-2.5 shadow-card transition-[box-shadow,transform] duration-200 hover:-translate-y-1 hover:rotate-0 hover:shadow-soft sm:p-3 ${hobby.rotationClassName} motion-reduce:transition-none motion-reduce:hover:transform-none`}>
-            <span className={`pointer-events-none absolute z-3 h-7 w-20 border border-white/45 opacity-80 shadow-sm ${hobby.tapeClassName}`} aria-hidden="true" />
+            <span className={`pointer-events-none absolute z-3 h-7 w-20 dark:border-none border border-white/45 opacity-80 shadow-sm ${hobby.tapeClassName}`} aria-hidden="true" />
 
             <div className="relative aspect-[4/3] overflow-hidden rounded-sm bg-primary-soft">
                 <img className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-[1.02] motion-reduce:transition-none motion-reduce:group-hover:scale-100" src={hobby.imageSrc} alt={hobby.imageAlt} loading="lazy" />

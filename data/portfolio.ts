@@ -480,11 +480,11 @@ export const education: EducationEntry[] = [
 }
 
 export const certifications: CertificationEntry[] = [
-    { title: 'Clean Code', issuer: 'Rocketseat', year: 'apr 2025', icon: FaCode, color: '#475569', backgroundColor: '#E2E8F0' },
-    { title: 'Diving deeper into Next.js', issuer: 'Rocketseat', year: 'apr 2025', icon: TbBrandNextjs, color: 'white', backgroundColor: 'black' },
-    { title: 'ReactJS Development Program', issuer: 'Rocketseat', year: 'apr 2025', icon: FaReact, color: '#00D8FF', backgroundColor: '#222222' },
-    { title: 'Devops Culture Fundamentals', issuer: 'Rocketseat', year: 'oct 2024', icon: FaInfinity, color: '#7C3AED', backgroundColor: '#EDE9FE' },
-    { title: 'Design System', issuer: 'Rocketseat', year: 'oct 2024', icon: FaSwatchbook, color: '#0F766E', backgroundColor: '#CCFBF1' },
+    { title: 'Clean Code', issuer: 'Rocketseat', year: 'apr 2025', icon: FaCode, color: 'text-[#475569]', backgroundColor: 'bg-[#E2E8F0]' },
+    { title: 'Diving deeper into Next.js', issuer: 'Rocketseat', year: 'apr 2025', icon: TbBrandNextjs, color: 'text-white', backgroundColor: 'bg-black' },
+    { title: 'ReactJS Development Program', issuer: 'Rocketseat', year: 'apr 2025', icon: FaReact, color: 'text-[#00D8FF]', backgroundColor: 'bg-[#222222] dark:bg-gray-800' },
+    { title: 'Devops Culture Fundamentals', issuer: 'Rocketseat', year: 'oct 2024', icon: FaInfinity, color: 'text-[#7C3AED] dark:text-gray-300', backgroundColor: 'bg-[#EDE9FE] dark:bg-indigo-900' },
+    { title: 'Design System', issuer: 'Rocketseat', year: 'oct 2024', icon: FaSwatchbook, color: 'text-[#0F766E] dark:text-teal-400', backgroundColor: 'bg-[#CCFBF1] dark:bg-teal-900' },
 ];
 
 export const journey: JourneyEntry[] = [
@@ -504,7 +504,7 @@ export const hobbies: Hobby[] = [
         imageSrc: '/images/hobbies/bike.png',
         imageAlt: 'Cycling hobby photo placeholder',
         rotationClassName: 'sm:-rotate-1',
-        tapeClassName: '-top-3 left-9 -rotate-6 bg-primary-soft/75',
+        tapeClassName: '-top-3 left-9 -rotate-6 dark:bg-primary bg-primary-soft/75',
         doodle: 'underline',
     },
     {
@@ -534,7 +534,7 @@ export const hobbies: Hobby[] = [
         imageSrc: '/images/hobbies/read.png',
         imageAlt: 'Reading hobby photo placeholder',
         rotationClassName: 'sm:rotate-1',
-        tapeClassName: '-top-3 left-1/2 -translate-x-1/2 -rotate-3 bg-surface/85',
+        tapeClassName: '-top-3 left-1/2 -translate-x-1/2 -rotate-3 dark:bg-primary bg-surface/85',
         doodle: 'stars',
     },
     {
@@ -544,7 +544,7 @@ export const hobbies: Hobby[] = [
         imageSrc: '/images/hobbies/travel.png',
         imageAlt: 'Travelling hobby photo placeholder',
         rotationClassName: 'sm:-rotate-1',
-        tapeClassName: '-top-3 right-8 rotate-6 bg-primary-soft/75',
+        tapeClassName: '-top-3 right-8 rotate-6 dark:bg-primary bg-primary-soft/75',
         doodle: 'plane',
     },
 ];

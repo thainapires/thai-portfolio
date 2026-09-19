@@ -29,9 +29,9 @@ export function AboutMe() {
                         <ViewportRoughNotation
                             type="circle"
                             show
-                            color="#D5CBFE"
+                            color="var(--color-primary-soft)"
                             strokeWidth={2}
-                            padding={[5, 1, 5, 1]}
+                            padding={[0, 3, 5, 10]}
                             animationDuration={800}
                         >
                             <em className="font-serif font-bold italic text-primary">
@@ -49,7 +49,7 @@ export function AboutMe() {
                             <ViewportRoughNotation
                                 type="highlight"
                                 show
-                                color="#D5CBFE"
+                                color="var(--color-primary-soft)"
                                 strokeWidth={2}
                                 animationDuration={800}
                             >
@@ -123,7 +123,7 @@ export function AboutMe() {
                 </div>
 
                 <div
-                    className="bg-white sm:bg-transparent border-[0.120rem] sm:border-none border-gray-300 rounded-2xl order-4 grid sm:order-none sm:grid-cols-3 md:order-3 lg:order-none lg:col-span-full lg:border-y lg:border-border xl:col-span-2 xl:grid-cols-1"
+                    className="order-4 grid rounded-2xl border border-border bg-surface sm:order-none sm:grid-cols-3 sm:border-none sm:bg-transparent md:order-3 lg:order-none lg:col-span-full lg:border-y lg:border-border xl:col-span-2 xl:grid-cols-1"
                     aria-label={t.statisticsLabel}
                 >
                     {statistics.map((stat) => (

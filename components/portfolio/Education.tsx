@@ -30,7 +30,7 @@ function EducationNote({ label, className = '' }: { label: string; className?: s
                 whileHover={noteHoverAnimation}
                 transition={noteHoverTransition}
             >
-                <img className="absolute -top-3 left-1/2 w-12 -translate-x-1/2 -rotate-2 opacity-80" src="/images/assets/tape.png" alt="" />
+                <img className="dark:hidden absolute -top-3 left-1/2 w-12 -translate-x-1/2 -rotate-2 opacity-80" src="/images/assets/tape.png" alt="" />
 
                 <span className="font-hand text-xl font-semibold leading-none text-text-primary">
                     {label}
@@ -132,15 +132,15 @@ export function Education() {
 
                                 return (
                                     <li className="flex items-center gap-4 py-4 first:pt-0 last:pb-0" key={certification.title}>
-                                        <span className="grid size-12 shrink-0 place-items-center rounded-soft text-surface" style={{ backgroundColor: certification.backgroundColor }}>
-                                            <Icon color={certification.color} className="size-6" aria-hidden="true" />
+                                        <span className={`grid size-12 shrink-0 place-items-center rounded-soft text-surface ${certification.backgroundColor}`}>
+                                            <Icon  className={`size-6 ${certification.color}`} aria-hidden="true" />
                                         </span>
                                         
                                         <div className="min-w-0 flex-1">
                                             <h4 className="m-0 text-base font-extrabold leading-tight">{certification.title}</h4>
                                             <p className="mt-1 mb-0 text-sm text-text-secondary">{certification.issuer} <span aria-hidden="true">·</span> {certification.year}</p>
                                         </div>
-                                        <ExternalLink className="size-5 shrink-0 text-text-primary" aria-hidden="true" />
+                                        <ExternalLink className="size-5 shrink-0 text-text-primary cursor-pointer" aria-hidden="true" />
                                     </li>
                                 );
                             })}

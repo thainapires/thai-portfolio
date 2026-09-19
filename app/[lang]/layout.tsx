@@ -57,8 +57,11 @@ export default async function LocalizedLayout({ children, params }: LocalizedLay
     if (!hasLocale(lang)) notFound();
 
     return (
-        <html lang={lang}>
-            <body suppressHydrationWarning>{children}</body>
+        <html lang={lang} data-theme="light" suppressHydrationWarning>
+            <head>
+                <script dangerouslySetInnerHTML={{ __html: `(function(){try{var t=localStorage.getItem('portfolio-theme');if(t!=='light'&&t!=='dark')t=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';document.documentElement.setAttribute('data-theme',t)}catch(e){}})()` }} />
+            </head>
+            <body>{children}</body>
             <Script defer src="https://cloud.umami.is/script.js" data-website-id="cdc53343-d004-4052-9362-3ead2bb281b7" />
             <Script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "38af3399daee40699a804c90d7bba8ef"}' />
         </html>

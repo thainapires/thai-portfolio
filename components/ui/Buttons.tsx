@@ -4,7 +4,7 @@ type ButtonLinkProps = PropsWithChildren<AnchorHTMLAttributes<HTMLAnchorElement>
 
 export function PrimaryButton({ children, className = '', ...props }: ButtonLinkProps) {
     return (
-        <a className={`inline-flex min-h-12 items-center gap-3 rounded-pill bg-text-primary px-6 text-button font-extrabold text-white shadow-floating transition-[box-shadow,transform] duration-200 hover:-translate-y-0.5 hover:shadow-soft sm:min-h-14 sm:px-8 ${className}`} {...props}>
+        <a className={`inline-flex min-h-12 items-center gap-3 rounded-pill bg-text-primary dark:bg-primary px-6 text-button font-extrabold text-white shadow-floating transition-[box-shadow,transform] duration-200 hover:-translate-y-0.5 hover:shadow-soft sm:min-h-14 sm:px-8 ${className}`} {...props}>
             {children}
         </a>
     );

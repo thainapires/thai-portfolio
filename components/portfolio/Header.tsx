@@ -1,6 +1,7 @@
 import { type MouseEvent, useEffect, useRef, useState } from 'react';
 import { FaBars, FaXmark } from 'react-icons/fa6';
 import { ViewportRoughNotation } from '@/components/ui/ViewportRoughNotation';
+import { AnimatedThemeToggle } from '@/components/ui/animated-theme-toggle';
 
 import { LanguageSwitcher } from '@/components/i18n/LanguageSwitcher';
 import { useDictionary } from '@/components/i18n/DictionaryProvider';
@@ -16,7 +17,7 @@ function NavLabel({
         <ViewportRoughNotation
             type="underline"
             show={isActive}
-            color="#8B73F6"
+            color="var(--color-primary)"
             strokeWidth={2}
             padding={2}
             iterations={2}
@@ -142,15 +143,7 @@ export function Header() {
 
             <div className="flex items-center gap-3 justify-self-end">
                 <LanguageSwitcher />
-                {/*
-                <button className="grid h-10 grid-cols-[16px_28px_16px] items-center gap-1 rounded-pill border border-border bg-white/45 px-2 text-text-primary sm:grid-cols-[20px_34px_20px] sm:gap-2 sm:px-3" type="button" aria-label="Alternar tema visual">
-                    <FaSun size={14} aria-hidden="true" />
-
-                    <span className="relative h-4 w-7 rounded-pill sm:h-[18px] sm:w-[34px] bg-primary-soft after:absolute after:left-1 after:top-1/2 after:size-3 after:-translate-y-1/2 after:rounded-full after:bg-primary-strong" aria-hidden="true" />
-
-                    <FaMoon size={14} aria-hidden="true" />
-                </button>
-                */}
+                <AnimatedThemeToggle />
 
                 <button className="grid size-11 place-items-center rounded-pill border border-border bg-surface lg:hidden" type="button" aria-label={isOpen ? dictionary.navigation.closeMenu : dictionary.navigation.openMenu} aria-expanded={isOpen} onClick={() => setIsOpen((value) => !value)}>
                     {isOpen ? <FaXmark size={20} /> : <FaBars size={20} />}

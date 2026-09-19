@@ -4,7 +4,7 @@ import { useDictionary } from '@/components/i18n/DictionaryProvider';
 export function SocialSidebar() {
     const { dictionary } = useDictionary();
     return (
-        <aside className="fixed left-12 top-1/2 z-10 hidden -translate-y-1/2 flex-col items-center gap-5 text-black/80 xl:flex" aria-label={dictionary.social.label}>
+        <aside className="fixed left-12 top-1/2 z-10 hidden -translate-y-1/2 flex-col items-center gap-5 text-text-primary/80 xl:flex" aria-label={dictionary.social.label}>
             <span className="text-xl leading-none text-primary" aria-hidden="true">
                 ✦
             </span>

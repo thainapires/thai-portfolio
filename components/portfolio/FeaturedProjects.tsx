@@ -124,7 +124,7 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
     return (
         <Hover3D className="h-full">
             <article className={`group relative flex h-full min-w-0 flex-col rounded-card border border-border bg-surface p-4 shadow-card transition-[box-shadow,transform] duration-200 hover:-translate-y-1 hover:shadow-soft ${rotationClassName} motion-reduce:transition-none motion-reduce:hover:transform-none motion-reduce:hover:rotate-0`} style={{ transformStyle: 'preserve-3d' }}>
-                {index === 0 && <img className="pointer-events-none absolute -left-5 top-2 z-3 w-22 -rotate-30 opacity-70" src="/images/assets/tape.png" alt="" aria-hidden="true" style={{ transform: 'translateZ(34px)' }} />}
+                {index === 0 && <img className="dark:hidden pointer-events-none absolute -left-5 top-2 z-3 w-22 -rotate-30 opacity-70" src="/images/assets/tape.png" alt="" aria-hidden="true" style={{ transform: 'translateZ(34px)' }} />}
                 {index === 1 && (
                     <div style={{ transform: 'translateZ(34px)' }}>
                         <ProjectBadge />
@@ -172,7 +172,7 @@ export function FeaturedProjects() {
                         <ViewportRoughNotation
                             type="highlight" 
                             show 
-                            color="#D5CBFE"
+                            color="var(--color-primary-soft)"
                             strokeWidth={2}
                             animationDuration={800}
                         >

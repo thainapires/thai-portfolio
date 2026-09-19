@@ -14,13 +14,23 @@ function SkillCard({ skill }: { skill: StackSkill }) {
 
     return (
         <article data-main-skill-card className={`group relative grid aspect-[4/5] min-h-40 content-center justify-items-center overflow-visible px-4 py-6 text-center transition-[filter,transform] duration-200 hover:-translate-y-1 hover:drop-shadow-xl sm:min-h-44 ${skill.cardClassName} motion-reduce:transition-none motion-reduce:hover:transform-none`}>
-            <img className="pointer-events-none absolute inset-0 z-0 h-full w-full select-none object-fill drop-shadow-sm" src="/images/skills/paper-card.png" alt="" aria-hidden="true" />
-
+            <img
+                src="/images/skills/paper-card.png"
+                alt=""
+                aria-hidden="true"
+                className="pointer-events-none absolute inset-0 z-0 block h-full w-full select-none object-fill drop-shadow-sm dark:hidden"
+            />
+            <img
+                src="/images/skills/paper-card-dark.png"
+                alt=""
+                aria-hidden="true"
+                className="pointer-events-none absolute inset-0 z-0 hidden h-full w-full select-none object-fill drop-shadow-sm dark:block"
+            />
             <img className={`pointer-events-none absolute -top-2 z-20 w-24 max-w-[58%] opacity-85 drop-shadow-sm ${skill.tapeClassName}`} src="/images/assets/tape-skills.png" alt="" aria-hidden="true" />
 
-            <Icon className="relative z-10 mt-3 mb-6 size-16 text-primary transition-transform duration-200 group-hover:scale-105 sm:size-20 motion-reduce:transition-none motion-reduce:group-hover:scale-100" aria-hidden="true" />
+            <Icon className="relative z-10 mt-3 mb-6 size-16 text-primary dark:text-mauve-200 transition-transform duration-200 group-hover:scale-105 sm:size-20 motion-reduce:transition-none motion-reduce:group-hover:scale-100" aria-hidden="true" />
 
-            <h3 className="relative z-10 m-0 text-base font-extrabold leading-tight sm:text-lg">{skill.name}</h3>
+            <h3 className="relative z-10 m-0 text-base dark:text-mauve-200 font-extrabold leading-tight sm:text-lg">{skill.name}</h3>
         </article>
     );
 }
@@ -106,7 +116,7 @@ function LoveStatement() {
 
             {t.loveStart}{' '}
 
-            <ViewportRoughNotation type="underline" show color="#6049bc" strokeWidth={2} animationDuration={800}>
+            <ViewportRoughNotation type="underline" show color="var(--color-primary-strong)" strokeWidth={2} animationDuration={800}>
                 <span className="relative inline-block font-hand text-3xl font-bold leading-none text-primary-strong">
                     {t.love}
 
@@ -134,7 +144,7 @@ export function SkillsStack() {
 
                     <h2 className="mt-3 mb-4 text-4xl font-extrabold leading-tight sm:text-5xl lg:text-6xl">
                         {t.titleStart}{' '}
-                        <ViewportRoughNotation type="highlight" show color="#D5CBFE" strokeWidth={2} animationDuration={800}>
+                        <ViewportRoughNotation type="highlight" show color="var(--color-primary-soft)" strokeWidth={2} animationDuration={800}>
                             {t.titleHighlight}
                         </ViewportRoughNotation>{' '}
                         {t.titleEnd}
