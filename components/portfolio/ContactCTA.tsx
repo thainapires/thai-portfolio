@@ -34,7 +34,7 @@ export function ContactCTA() {
                     <DotPattern className="right-6 top-6 hidden h-20 w-28 text-text-primary lg:block" />
 
                     <span
-                        className="absolute bottom-[-72px] right-[-58px] h-[250px] w-[300px] rounded-[52%_48%_42%_58%] bg-accent-pink"
+                        className="absolute bottom-[-72px] right-[-58px] h-[250px] w-[300px] rounded-[52%_48%_42%_58%] bg-primary-soft"
                         aria-hidden="true"
                     />
 

@@ -12,7 +12,7 @@ function HobbyExtraBadges() {
             {hobbyExtras.map((item, index) => (
                 <li key={item.label}>
                     {item.label != 'places I\'ve been' ? (
-                        <span className={`inline-flex items-center gap-2 rounded-pill border border-border bg-surface/90 px-3 py-2 text-xs font-extrabold lowercase leading-none text-text-primary shadow-card ${item.rotationClassName}`}>
+                        <span className={`inline-flex items-center gap-2 rounded-pill border border-border bg-surface/90 px-3 py-2 text-xs font-extrabold lowercase leading-none text-text-primary shadow-card`}>
                             {item.emoji}{' '}
                             {item.label}
                         </span>

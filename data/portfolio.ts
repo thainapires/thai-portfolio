@@ -182,7 +182,6 @@ export interface Hobby {
 export interface HobbyExtra {
     label: string;
     emoji: string;
-    rotationClassName: string;
 }
 
 export const navItems = [
@@ -553,67 +552,54 @@ export const hobbyExtras: HobbyExtra[] = [
     {
         label: 'plants',
         emoji: '🌱',
-        rotationClassName: 'rotate-2',
     },
     {
         label: 'air dry clay',
         emoji: '🏺',
-        rotationClassName: '-rotate-3',
     },
     {
         label: 'watercolor',
         emoji: '🎨',
-        rotationClassName: '-rotate-2',
     },
     {
         label: 'acrylics',
         emoji: '🖼️',
-        rotationClassName: 'rotate-3',
     },
     {
         label: 'art history',
         emoji: '🏛️',
-        rotationClassName: '-rotate-2',
     },
     {
         label: 'geoguessr',
         emoji: '🌍',
-        rotationClassName: 'rotate-3',
     },
     {
         label: 'puzzles',
         emoji: '🧩',
-        rotationClassName: '-rotate-2',
     },
     {
         label: 'ocean',
         emoji: '🌊',
-        rotationClassName: 'rotate-3',
     },
     {
         label: 'carioca',
         emoji: '⛱️',
-        rotationClassName: '-rotate-2',
     },
     {
         label: 'açaí lover',
         emoji: '🫐',
-        rotationClassName: 'rotate-3',
     },
     {
         label: 'camping',
         emoji: '⛺',
-        rotationClassName: '-rotate-2',
     },
     {
         label: 'hiking',
         emoji: '🥾',
-        rotationClassName: 'rotate-3',
     },
     {
         label: 'places I\'ve been',
         emoji: '🇧🇷 🇵🇹 🇩🇪 🇬🇧 🇮🇹 🇻🇦 🇫🇷 🇳🇱 🇧🇪 🇨🇭 🇱🇺 🇦🇹 🇵🇱 🇺🇾 🇦🇷 🇨🇱',
-        rotationClassName: '',
     },
 ];
 
