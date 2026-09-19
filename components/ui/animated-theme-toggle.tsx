@@ -23,7 +23,7 @@ type AnimatedThemeToggleProps = { className?: string };
 function getPreferredTheme(): Theme {
     const storedTheme = localStorage.getItem(storageKey);
     if (storedTheme === 'light' || storedTheme === 'dark') return storedTheme;
-    return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    return 'light';
 }
 
 function applyTheme(theme: Theme): void {
@@ -39,17 +39,6 @@ export function AnimatedThemeToggle({ className = '' }: AnimatedThemeToggleProps
         const preferredTheme = getPreferredTheme();
         setTheme(preferredTheme);
         applyTheme(preferredTheme);
-
-        const colorScheme = window.matchMedia('(prefers-color-scheme: dark)');
-        const syncSystemTheme = () => {
-            if (localStorage.getItem(storageKey) !== null) return;
-            const systemTheme = colorScheme.matches ? 'dark' : 'light';
-            setTheme(systemTheme);
-            applyTheme(systemTheme);
-        };
-
-        colorScheme.addEventListener('change', syncSystemTheme);
-        return () => colorScheme.removeEventListener('change', syncSystemTheme);
     }, []);
 
     function toggleTheme(): void {
