@@ -155,11 +155,11 @@ export function Hero() {
 
                     <Doodle className="absolute bottom-4 right-4 z-10 w-20 -rotate-6 text-primary sm:w-32" />
 
-                    <div className="reveal-on-load relative z-10 w-full rounded-2xl border border-text-primary dark:border-white/20 bg-[#1b191f] dark:bg-[#25293D] p-2 shadow-floating transition duration-500 ease-out hover:-translate-y-1 hover:shadow-xl sm:-rotate-2 sm:p-3 motion-reduce:transition-none motion-reduce:hover:transform-none">
+                    <div className="reveal-on-load relative z-10 w-full rounded-2xl border border-text-primary dark:border-white/20 bg-[#25293D] p-2 shadow-floating transition duration-500 ease-out hover:-translate-y-1 hover:shadow-xl sm:-rotate-2 sm:p-3 motion-reduce:transition-none motion-reduce:hover:transform-none">
                         <HeroTerminalArrow />
 
-                        <div className="overflow-hidden rounded-xl border border-white/10 dark:border-white/[0.08] bg-[#211f27] dark:bg-[#1E2233]">
-                            <div className="flex items-center justify-between border-b border-white/10 dark:border-white/[0.08] bg-[#2c2934] dark:bg-[#292E43] px-3 py-2 sm:px-4 sm:py-3">
+                        <div className="overflow-hidden rounded-xl border border-white/[0.08] bg-[#1E2233]">
+                            <div className="flex items-center justify-between border-b border-white/[0.08] bg-[#292E43] px-3 py-2 sm:px-4 sm:py-3">
                                 <div className="flex items-center gap-2" aria-hidden="true">
                                     <span className="size-3 rounded-full bg-accent-pink dark:bg-[#F38BA8]" />
                                     <span className="size-3 rounded-full bg-accent-yellow dark:bg-[#F4D06F]" />
