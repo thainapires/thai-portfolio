@@ -18,7 +18,7 @@ function HobbyExtraBadges() {
                         </span>
                     ) : (
                         <span
-                            className={`flex flex-col sm:inline-flex sm:flex-row items-center justify-center gap-1 rounded-pill border border-border bg-surface/90 px-3 py-2 text-center text-xs font-extrabold lowercase leading-none text-text-primary shadow-card ${item.rotationClassName}`}
+                            className={`flex flex-col sm:inline-flex sm:flex-row items-center justify-center gap-1 rounded-pill border border-border bg-surface/90 px-3 py-2 text-center text-xs font-extrabold lowercase leading-none text-text-primary shadow-card`}
                         >
                             {item.emoji}
                             <span>{item.label}</span>
