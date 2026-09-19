@@ -1,0 +1,176 @@
+{
+  "metadata": {
+    "title": "Thainá Pires — Full Stack Developer",
+    "description": "Portfolio of Thainá Pires, a full stack developer who builds thoughtful, accessible and performant digital experiences.",
+    "ogImageAlt": "Thainá Pires — Full Stack Developer"
+  },
+  "languageSwitcher": {
+    "label": "Choose language",
+    "languages": { "en": "English", "pt-BR": "Brazilian Portuguese" }
+  },
+  "navigation": {
+    "label": "Primary navigation",
+    "mobileLabel": "Mobile navigation",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu",
+    "homeLabel": "Thainá dev. home",
+    "items": [
+      { "label": "Home", "href": "#top" },
+      { "label": "About", "href": "#about" },
+      { "label": "Skills", "href": "#stack" },
+      { "label": "Experience", "href": "#journey" },
+      { "label": "Projects", "href": "#projects" },
+      { "label": "Education", "href": "#education" },
+      { "label": "Contact", "href": "#contact" }
+    ]
+  },
+  "hero": {
+    "greeting": "Hey, I'm",
+    "titles": ["Full Stack Developer", "Creative Coder", "Cycling Enthusiast", "Traveler at heart", "Lifelong Learner"],
+    "descriptionStart": "Somewhere between code & creativity. I build digital things with",
+    "descriptionHighlight": "curiosity",
+    "descriptionEnd": ", thoughtful code and a little personality.",
+    "workCta": "My work",
+    "aboutCta": "About me",
+    "terminal": [
+      { "prompt": "thaina@portfolio", "command": "whoami", "output": "developer • curious mind • loves to learn new things • loves art" },
+      { "prompt": "thaina@portfolio", "command": "git status", "output": "On branch always-learning.", "extra": "Your branch is up to date with curiosity." },
+      { "prompt": "thaina@portfolio", "command": "npm run craft", "output": "Building delightful experiences... done" }
+    ],
+    "design": "Design",
+    "ready": "ready"
+  },
+  "about": {
+    "label": "THE PERSON BEHIND THE CODE",
+    "titleStart": "I really like",
+    "titleHighlight": "making things",
+    "titleEnd": "and making them a little better along the way.",
+    "descriptionStart": "Sometimes it's a web application, sometimes a side project, sometimes something that has absolutely nothing to do with code. I just enjoy the process of turning an idea into",
+    "descriptionHighlight": "something real",
+    "location": "Rio de Janeiro, Brazil",
+    "remote": "Working remotely",
+    "timezone": "UTC-3 (BRT)",
+    "portuguese": "Portuguese",
+    "english": "English",
+    "native": "Native",
+    "fluent": "Fluent",
+    "statisticsLabel": "Portfolio statistics",
+    "portraitLabel": "Editorial portrait of Thainá",
+    "portraitAlt": "Portrait of Thainá",
+    "queerDev": "queer dev",
+    "age": "28 y.o.",
+    "statistics": [
+      { "value": 5, "subvalue": "+", "label": "Years of experience" },
+      { "value": 2, "label": "Languages spoken" },
+      { "subvalue": "∞", "label": "Things left to explore" }
+    ]
+  },
+  "skills": {
+    "label": "SKILLS",
+    "titleStart": "My",
+    "titleHighlight": "creative",
+    "titleEnd": "toolkit",
+    "description": "Languages, frameworks and tools I use to turn ideas into working things.",
+    "learningLine1": "always learning",
+    "learningLine2": "new things",
+    "loveStart": "and other tools and technologies I",
+    "love": "love",
+    "loveEnd": "working with",
+    "orIUsed": "or tools I used to work with"
+  },
+  "contributions": {
+    "label": "GITHUB + GITLAB",
+    "titleStart": "A year in",
+    "titleHighlight": "code",
+    "description": "A glimpse into my coding activity across GitHub and GitLab.",
+    "total": "Total",
+    "weekdays": ["Mon", "Wed", "Fri"],
+    "less": "Less",
+    "more": "More",
+    "vacation": "Vacation",
+    "dayOff": "Day off",
+    "holiday": "Holiday",
+    "contributionOne": "contribution",
+    "contributionOther": "contributions",
+    "and": "and",
+    "notConfigured": "Contribution data is ready to load after the GitHub and GitLab environment variables are configured.",
+    "unavailable": "Showing available data. Unavailable source: {sources}."
+  },
+  "journey": {
+    "label": "MY JOURNEY",
+    "title": "Where I've been & what I've learned",
+    "description": "Every experience has shaped the way I think, build and solve problems today.",
+    "showLess": "Show less",
+    "showAll": "View all experiences",
+    "downloadCv": "Download CV",
+    "soon": "Soon",
+    "entries": [
+      { "period": "2026 — Now", "title": "Mid-level Full Stack Developer", "company": "Rede Parcerias", "location": "Remote · Rio de Janeiro, Brazil", "description": "Building and evolving complex features for a multi-tenant SaaS platform, working across frontend, backend, APIs and integrations. Focused on scalable architecture, performance, maintainability and user experience, while contributing to technical decisions, code reviews and continuous improvements." },
+      { "period": "2021 — 2025", "title": "Junior Full Stack Developer", "company": "Rede Parcerias", "location": "Remote · Rio de Janeiro, Brazil", "description": "Developed and maintained features across a multi-tenant SaaS platform, working with frontend and backend applications, corporate APIs and third-party integrations. Contributed to the modernization of legacy systems, microservices, authentication flows and continuous improvements to the platform." },
+      { "period": "2021", "title": "Software Development Intern", "company": "Rede Parcerias", "location": "Remote · Rio de Janeiro, Brazil", "description": "Started my software development career building web features, maintaining existing applications and integrating corporate APIs. Worked closely with an international team, gaining hands-on experience with production systems, debugging and collaborative development." },
+      { "period": "2020 — 2021", "title": "Co-founder & Developer", "company": "Duki.app", "location": "Remote · Rio de Janeiro, Brazil", "description": "Co-founded a social-impact education project, building digital tools and helping shape the product from idea to implementation." },
+      { "period": "2018 — 2019", "title": "Marketing & Audiovisual", "company": "Enactus CEFET/RJ", "location": "Rio de Janeiro, Brazil", "description": "Worked with communication, marketing and audiovisual production for social entrepreneurship projects and national events." },
+      { "period": "2018 — 2019", "title": "Marketing & Branding", "company": "Toti", "location": "Rio de Janeiro, Brazil", "description": "Worked with branding, visual identity and digital content for a social-impact startup focused on education and technology." }
+    ]
+  },
+  "projects": {
+    "label": "FEATURED PROJECTS",
+    "titleStart": "Things I've",
+    "titleHighlight": "built",
+    "description": "A collection of things I've imagined, explored, designed and turned into working software.",
+    "viewProject": "View project",
+    "viewMore": "View more on GitHub",
+    "items": [
+      { "title": "Bom dia Dev", "description": "A personal dev dashboard that surfaces GitLab MR status, code review load, and daily coding activity in one glanceable view.", "imageAlt": "Bom dia Dev dashboard screenshot", "stats": ["Dashboard", "GitLab", "Productivity", "TypeScript"] },
+      { "title": "Git Fusion", "description": "A tool that combines GitHub and GitLab contribution data into a unified, interactive graph.", "imageAlt": "Git Fusion project screenshot", "stats": ["Contribution Tracking", "API Integration", "Next.js"] },
+      { "title": "Schedulynx", "description": "A scheduling application that syncs with Google Calendar so others can book time directly into your calendar.", "imageAlt": "Schedulynx project screenshot", "stats": ["Scheduling", "Calendar Integration", "OAuth"] },
+      { "title": "ColorMixer", "description": "Mix two colors and see the result in real time.", "imageAlt": "ColorMixer project screenshot", "stats": ["Colors", "Creativity"] }
+    ]
+  },
+  "education": {
+    "label": "EDUCATION & LEARNING",
+    "titleStart": "Still learning,",
+    "titleHighlight": "always",
+    "description": "Formal education gave me a solid foundation. Courses and continuous learning keep me moving forward.",
+    "educationTitle": "Education",
+    "certificationsTitle": "Certifications",
+    "viewEducation": "View more details",
+    "viewCertificates": "View all certificates",
+    "entries": [
+      { "period": "2016 — 2021", "title": "Computer Science", "institution": "Federal Center for Technological Education Celso Suckow da Fonseca (CEFET/RJ)", "degree": "Bachelor's Degree", "location": "Rio de Janeiro, Brazil", "description": "A solid foundation in software engineering, algorithms, data structures and problem solving.", "note": "CEFET/RJ" },
+      { "period": "2019 — 2020", "title": "International Academic Exchange", "institution": "Polytechnic Institute of Santarém", "degree": "1 semester of Bachelor's Degree", "location": "Santarém, Portugal", "description": "A one-semester academic exchange in Portugal, with coursework in Informatics at IPSantarém.", "note": "International Exchange 🇵🇹" }
+    ],
+    "certifications": [
+      { "title": "Clean Code", "issuer": "Rocketseat", "year": "Apr 2025" },
+      { "title": "Diving deeper into Next.js", "issuer": "Rocketseat", "year": "Apr 2025" },
+      { "title": "ReactJS Development Program", "issuer": "Rocketseat", "year": "Apr 2025" },
+      { "title": "DevOps Culture Fundamentals", "issuer": "Rocketseat", "year": "Oct 2024" },
+      { "title": "Design System", "issuer": "Rocketseat", "year": "Oct 2024" }
+    ]
+  },
+  "hobbies": {
+    "label": "MY HOBBIES",
+    "titleStart": "Life outside the",
+    "titleHighlight": "terminal",
+    "description": "The things that keep me curious, creative and inspired.",
+    "extrasLabel": "Other things I like",
+    "placesKey": "places",
+    "items": [
+      { "title": "Cycling", "description": "Freedom on two wheels. It keeps me present and challenges me to go further.", "imageAlt": "Thainá cycling" },
+      { "title": "Nature", "description": "Being outdoors recharges my energy and reminds me of what really matters.", "imageAlt": "A nature landscape" },
+      { "title": "Art", "description": "I love exploring creativity through illustrations, paintings and small visual projects.", "imageAlt": "Art materials and artwork" },
+      { "title": "Reading", "description": "Books inspire me, teach me and transport me to new worlds.", "imageAlt": "Books and reading" },
+      { "title": "Traveling", "description": "Exploring new places and cultures broadens my perspective and enriches my understanding of the world.", "imageAlt": "Travel memories" }
+    ],
+    "extras": ["plants", "air-dry clay", "watercolor", "acrylics", "art history", "GeoGuessr", "puzzles", "ocean", "carioca", "açaí lover", "camping", "hiking", "places I've been"]
+  },
+  "contact": {
+    "title": "Let's build something",
+    "highlight": "amazing together!",
+    "description": "Open to new opportunities & projects.",
+    "cta": "GET IN TOUCH",
+    "facts": ["Based in Rio de Janeiro, Brazil", "Working remotely", "Open to opportunities worldwide"]
+  },
+  "social": { "label": "Social links", "connect": "LET'S CONNECT" },
+  "footer": { "socialLabel": "Footer social links", "copyright": "All rights reserved.", "madeWith": "Made with" }
+}

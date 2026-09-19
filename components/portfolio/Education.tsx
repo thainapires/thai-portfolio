@@ -1,6 +1,7 @@
 import { ArrowRight, ExternalLink, GraduationCap, MapPin, Medal } from 'lucide-react';
 
-import { certifications, education } from '@/data/portfolio';
+import { useLocalizedPortfolio } from '@/data/useLocalizedPortfolio';
+import { useDictionary } from '@/components/i18n/DictionaryProvider';
 import { Container } from '@/components/ui/Container';
 import { SectionLabel } from '@/components/ui/SectionLabel';
 import { ViewportRoughNotation } from '../ui/ViewportRoughNotation';
@@ -42,16 +43,19 @@ function EducationNote({ label, className = '' }: { label: string; className?: s
 const educationNotePositions = ['-right-2 top-2 rotate-6', '-right-2 top-12 -rotate-4'];
 
 export function Education() {
+    const { dictionary } = useDictionary();
+    const { certifications, education } = useLocalizedPortfolio();
+    const t = dictionary.education;
     return (
         <section id="education" className="relative scroll-mt-24 border-y border-border py-14 sm:py-16 lg:scroll-mt-28 lg:py-20">
             <Container>
                 <div className="max-w-3xl">
-                    <SectionLabel>EDUCATION &amp; LEARNING</SectionLabel>
+                    <SectionLabel>{t.label}</SectionLabel>
                     <h2 className="mt-3 mb-4 text-4xl font-extrabold leading-tight sm:text-5xl lg:text-6xl">
-                        Still learning, <em className="font-serif font-bold italic text-primary">always</em><span className="text-primary">.</span>
+                        {t.titleStart} <em className="font-serif font-bold italic text-primary">{t.titleHighlight}</em><span className="text-primary">.</span>
                     </h2>
                     <p className="m-0 max-w-2xl text-base leading-7 text-text-secondary sm:text-lg">
-                        Formal education gave me a solid foundation. Certifications and continuous learning keep me moving forward.
+                        {t.description}
                     </p>
                 </div>
 
@@ -62,7 +66,7 @@ export function Education() {
                                 <span className="grid size-14 shrink-0 rotate-3 place-items-center bg-primary-soft text-text-primary shadow-card">
                                     <GraduationCap className="size-8" aria-hidden="true" />
                                 </span>
-                                <h3 className="m-0 text-2xl font-extrabold sm:text-3xl">Education</h3>
+                                <h3 className="m-0 text-2xl font-extrabold sm:text-3xl">{t.educationTitle}</h3>
                             </div>
 
                             <a
@@ -72,7 +76,7 @@ export function Education() {
                                 rel="noreferrer"
                             >
                                 <LiaLinkedin size={20}/>
-                                View more details
+                                {t.viewEducation}
                                 <ArrowRight className="size-3.5 transition-transform group-hover/link:translate-x-0.5 motion-reduce:transition-none motion-reduce:group-hover/link:translate-x-0" aria-hidden="true" />
                             </a>
                         </div>
@@ -107,7 +111,7 @@ export function Education() {
                                 <span className="grid size-14 shrink-0 rotate-3 place-items-center bg-primary-soft text-text-primary shadow-card">
                                     <Medal className="size-8" aria-hidden="true" />
                                 </span>
-                                <h3 className="m-0 text-2xl font-extrabold sm:text-3xl">Certifications</h3>
+                                <h3 className="m-0 text-2xl font-extrabold sm:text-3xl">{t.certificationsTitle}</h3>
                             </div>
 
                             <a
@@ -117,7 +121,7 @@ export function Education() {
                                 rel="noreferrer"
                             >
                                 <LiaLinkedin size={20}/>
-                                View all certificates
+                                {t.viewCertificates}
                                 <ArrowRight className="size-3.5 transition-transform group-hover/link:translate-x-0.5 motion-reduce:transition-none motion-reduce:group-hover/link:translate-x-0" aria-hidden="true" />
                             </a>
                         </div>

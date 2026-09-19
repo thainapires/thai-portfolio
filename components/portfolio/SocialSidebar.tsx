@@ -1,14 +1,16 @@
 import { socialLinks } from '@/data/portfolio';
+import { useDictionary } from '@/components/i18n/DictionaryProvider';
 
 export function SocialSidebar() {
+    const { dictionary } = useDictionary();
     return (
-        <aside className="fixed left-12 top-1/2 z-10 hidden -translate-y-1/2 flex-col items-center gap-5 text-black/80 xl:flex" aria-label="Social links">
+        <aside className="fixed left-12 top-1/2 z-10 hidden -translate-y-1/2 flex-col items-center gap-5 text-black/80 xl:flex" aria-label={dictionary.social.label}>
             <span className="text-xl leading-none text-primary" aria-hidden="true">
                 ✦
             </span>
 
             <span className="rotate-180 text-xs font-extrabold [writing-mode:vertical-rl]">
-                LET&apos;S CONNECT
+                {dictionary.social.connect}
             </span>
 
             <div className="h-24 w-px bg-border" aria-hidden="true" />

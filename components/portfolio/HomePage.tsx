@@ -1,6 +1,9 @@
 'use client';
 
 import type { ContributionCalendarData } from '@/lib/contributions';
+import type { Dictionary } from '@/lib/i18n/dictionaries';
+import type { Locale } from '@/lib/i18n/config';
+import { DictionaryProvider } from '@/components/i18n/DictionaryProvider';
 import { AboutMe } from '@/components/portfolio/AboutMe';
 import { ContactCTA } from '@/components/portfolio/ContactCTA';
 import { ContributionActivity } from '@/components/portfolio/ContributionActivity';
@@ -15,9 +18,15 @@ import { ProfessionalHighlights } from '@/components/portfolio/ProfessionalHighl
 import { SocialSidebar } from '@/components/portfolio/SocialSidebar';
 import { SkillsStack } from '@/components/portfolio/SkillsStack';
 
-export function HomePage({ contributionCalendar }: { contributionCalendar: ContributionCalendarData }) {
+type HomePageProps = {
+    contributionCalendar: ContributionCalendarData;
+    dictionary: Dictionary;
+    locale: Locale;
+};
+
+export function HomePage({ contributionCalendar, dictionary, locale }: HomePageProps) {
     return (
-        <>
+        <DictionaryProvider dictionary={dictionary} locale={locale}>
             <div className="relative flex min-h-svh flex-col overflow-x-hidden pt-24 lg:pt-28">
                 <img
                     aria-hidden="true"
@@ -34,7 +43,7 @@ export function HomePage({ contributionCalendar }: { contributionCalendar: Contr
             <main>
                 <AboutMe />
                 <SkillsStack />
-                <ContributionActivity calendar={contributionCalendar} />
+                {/* <ContributionActivity calendar={contributionCalendar} /> */}
                 <Journey />
                 {/* <ProfessionalHighlights /> */}
                 <FeaturedProjects />
@@ -44,6 +53,6 @@ export function HomePage({ contributionCalendar }: { contributionCalendar: Contr
             </main>
 
             <Footer />
-        </>
+        </DictionaryProvider>
     );
 }

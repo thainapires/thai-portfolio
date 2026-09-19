@@ -1,5 +1,3 @@
-import { statistics } from '@/data/portfolio';
-
 import { CalendarDays, House, Languages, MapPin } from 'lucide-react';
 
 import { Container } from '@/components/ui/Container';
@@ -8,20 +6,25 @@ import { ViewportRoughNotation } from '@/components/ui/ViewportRoughNotation';
 
 import { AboutPortraitCollage } from './AboutPortraitCollage';
 import { Doodle } from './decorations/Doodle';
+import { useDictionary } from '@/components/i18n/DictionaryProvider';
+import { useLocalizedPortfolio } from '@/data/useLocalizedPortfolio';
 
 const aboutImageSrc = '/images/me.png';
 
 export function AboutMe() {
+    const { dictionary } = useDictionary();
+    const { statistics } = useLocalizedPortfolio();
+    const t = dictionary.about;
     return (
         <section id="about" className="border-t border-border py-14 md:py-16 lg:py-20">
             <Container className="grid items-center gap-10 lg:grid-cols-12 xl:gap-16">
                 <AboutPortraitCollage imageSrc={aboutImageSrc} />
 
                 <div className="order-1 md:order-1 md:mx-auto md:w-full md:max-w-3xl lg:order-none lg:mx-0 lg:max-w-none lg:col-span-8 xl:col-span-7">
-                    <SectionLabel>THE PERSON BEHIND THE CODE</SectionLabel>
+                    <SectionLabel>{t.label}</SectionLabel>
 
                     <h3 className="my-6 max-w-2xl text-3xl leading-tight font-bold sm:text-4xl md:max-w-3xl md:text-3xl lg:max-w-2xl lg:text-5xl xl:text-5xl">
-                        I really like{' '}
+                        {t.titleStart}{' '}
 
                         <ViewportRoughNotation
                             type="circle"
@@ -32,15 +35,15 @@ export function AboutMe() {
                             animationDuration={800}
                         >
                             <em className="font-serif font-bold italic text-primary">
-                                {'  '}making things{'  '}
+                                {'  '}{t.titleHighlight}{'  '}
                             </em>
                         </ViewportRoughNotation>
 
-                        and making them a little better along the way.
+                        {t.titleEnd}
                     </h3>
 
                     <p className="m-0 max-w-2xl text-lg leading-8 text-text-secondary sm:text-xl md:max-w-3xl md:text-lg lg:max-w-2xl lg:text-xl">
-                        Sometimes it's a web application, sometimes a side project, sometimes something that has absolutely nothing to do with code. I just enjoy the process of turning an idea into{' '}
+                        {t.descriptionStart}{' '}
 
                         <span className="ml-1 inline-block">
                             <ViewportRoughNotation
@@ -50,7 +53,7 @@ export function AboutMe() {
                                 strokeWidth={2}
                                 animationDuration={800}
                             >
-                                something real
+                                {t.descriptionHighlight}
                             </ViewportRoughNotation>
                         </span>
                         .
@@ -60,29 +63,29 @@ export function AboutMe() {
                         <div className="flex flex-wrap items-center gap-x-5 gap-y-3 md:contents lg:flex">
                             <span className="inline-flex items-center gap-2">
                                 <MapPin className="size-4 shrink-0 text-primary" aria-hidden="true" />
-                                Rio de Janeiro, Brazil
+                                {t.location}
                             </span>
 
                             <span className="inline-flex items-center gap-2">
                                 <House className="size-4 shrink-0 text-primary" aria-hidden="true" />
-                                Working remotely
+                                {t.remote}
                             </span>
 
                             <span className="inline-flex items-center gap-2">
                                 <CalendarDays className="size-4 shrink-0 text-primary" aria-hidden="true" />
-                                UTC-3 (BRT)
+                                {t.timezone}
                             </span>
                         </div>
 
                         <div className="flex flex-wrap items-center gap-x-5 gap-y-3 md:contents lg:flex">
                             <span className="inline-flex items-center gap-2">
                                 <Languages className="size-4 shrink-0 text-primary" aria-hidden="true" />
-                                Portuguese <span className="text-primary" aria-hidden="true">•</span> Native
+                                {t.portuguese} <span className="text-primary" aria-hidden="true">•</span> {t.native}
                             </span>
 
                             <span className="inline-flex items-center gap-2">
                                 <Languages className="size-4 shrink-0 text-primary" aria-hidden="true" />
-                                English <span className="text-primary" aria-hidden="true">•</span> Fluent
+                                {t.english} <span className="text-primary" aria-hidden="true">•</span> {t.fluent}
                             </span>
                         </div>
                     </div>
@@ -93,27 +96,27 @@ export function AboutMe() {
                 <div className="order-3 grid gap-4 justify-center text-base font-semibold text-text-secondary sm:hidden">
                     <span className="inline-flex items-center gap-2">
                         <MapPin className="size-4 shrink-0 text-primary" aria-hidden="true" />
-                        Rio de Janeiro, Brazil
+                        {t.location}
                     </span>
 
                     <span className="inline-flex items-center gap-2">
                         <House className="size-4 shrink-0 text-primary" aria-hidden="true" />
-                        Working remotely
+                        {t.remote}
                     </span>
 
                     <span className="inline-flex items-center gap-2">
                         <CalendarDays className="size-4 shrink-0 text-primary" aria-hidden="true" />
-                        UTC-3 (BRT)
+                        {t.timezone}
                     </span>
 
                     <span className="inline-flex items-center gap-2">
                         <Languages className="size-4 shrink-0 text-primary" aria-hidden="true" />
-                        Portuguese <span className="text-primary" aria-hidden="true">•</span> Native
+                        {t.portuguese} <span className="text-primary" aria-hidden="true">•</span> {t.native}
                     </span>
 
                     <span className="inline-flex items-center gap-2">
                         <Languages className="size-4 shrink-0 text-primary" aria-hidden="true" />
-                        English <span className="text-primary" aria-hidden="true">•</span> Fluent
+                        {t.english} <span className="text-primary" aria-hidden="true">•</span> {t.fluent}
                     </span>
 
                     <Doodle className="mx-auto mt-5 w-36 text-primary" />
@@ -121,7 +124,7 @@ export function AboutMe() {
 
                 <div
                     className="bg-white sm:bg-transparent border-[0.120rem] sm:border-none border-gray-300 rounded-2xl order-4 grid sm:order-none sm:grid-cols-3 md:order-3 lg:order-none lg:col-span-full lg:border-y lg:border-border xl:col-span-2 xl:grid-cols-1"
-                    aria-label="Portfolio statistics"
+                    aria-label={t.statisticsLabel}
                 >
                     {statistics.map((stat) => (
                         <div

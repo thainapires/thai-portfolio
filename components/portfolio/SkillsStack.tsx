@@ -1,5 +1,6 @@
 import { mainStackSkills, otherStackSkills } from '@/data/portfolio';
 import type { StackSkill, StackTool } from '@/data/portfolio';
+import { useDictionary } from '@/components/i18n/DictionaryProvider';
 
 import { Container } from '@/components/ui/Container';
 import { SectionLabel } from '@/components/ui/SectionLabel';
@@ -79,14 +80,16 @@ function LearningArrow() {
 }
 
 function LearningNote() {
+    const { dictionary } = useDictionary();
+    const t = dictionary.skills;
     return (
         <div className="pointer-events-none absolute right-[12%] top-24 hidden text-primary-strong/75 xl:block" aria-hidden="true">
             <span className="absolute -left-16 top-0 size-12 -rotate-12 bg-current [mask-image:url('/images/assets/handdrawn-star.svg')] [mask-position:center] [mask-repeat:no-repeat] [mask-size:contain] [-webkit-mask-image:url('/images/assets/handdrawn-star.svg')] [-webkit-mask-position:center] [-webkit-mask-repeat:no-repeat] [-webkit-mask-size:contain]" />
 
             <span className="block rotate-6 font-hand text-3xl font-semibold leading-tight">
-                always learning
+                {t.learningLine1}
                 <br />
-                new things
+                {t.learningLine2}
             </span>
 
             <LearningArrow />
@@ -95,26 +98,30 @@ function LearningNote() {
 }
 
 function LoveStatement() {
+    const { dictionary } = useDictionary();
+    const t = dictionary.skills;
     return (
         <p className="relative mx-auto mt-12 mb-7 max-w-3xl text-center font-mono text-base leading-8 text-text-primary sm:text-lg">
             <span aria-hidden="true">... </span>
 
-            and other tools and technologies I{' '}
+            {t.loveStart}{' '}
 
             <ViewportRoughNotation type="underline" show color="#6049bc" strokeWidth={2} animationDuration={800}>
                 <span className="relative inline-block font-hand text-3xl font-bold leading-none text-primary-strong">
-                    love
+                    {t.love}
 
                     <img src="/images/assets/heart.svg" className="absolute -right-2 -top-3 w-3 rotate-12 opacity-90 sm:w-4" alt="" aria-hidden="true" />
                 </span>
             </ViewportRoughNotation>{' '}
 
-            working with.
+            {t.loveEnd}
         </p>
     );
 }
 
 export function SkillsStack() {
+    const { dictionary } = useDictionary();
+    const t = dictionary.skills;
     const shouldReduceMotion = useReducedMotion();
 
     return (
@@ -126,16 +133,16 @@ export function SkillsStack() {
                     <SectionLabel>SKILLS</SectionLabel>
 
                     <h2 className="mt-3 mb-4 text-4xl font-extrabold leading-tight sm:text-5xl lg:text-6xl">
-                        My{' '}
+                        {t.titleStart}{' '}
                         <ViewportRoughNotation type="highlight" show color="#D5CBFE" strokeWidth={2} animationDuration={800}>
-                            creative
+                            {t.titleHighlight}
                         </ViewportRoughNotation>{' '}
-                        toolkit
+                        {t.titleEnd}
                         <span className="text-primary">.</span>
                     </h2>
 
                     <p className="m-0 max-w-xl text-base leading-7 text-text-secondary sm:text-lg">
-                        Languages, frameworks and tools I use to turn ideas into working things.
+                        {t.description}
                     </p>
                 </div>
 

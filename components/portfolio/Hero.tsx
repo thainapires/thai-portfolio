@@ -8,25 +8,7 @@ import { ViewportRoughNotation } from '@/components/ui/ViewportRoughNotation';
 import { Doodle } from './decorations/Doodle';
 import { DotPattern } from './decorations/DotPattern';
 import { TypingHeroTitle } from './TypingHeroTitle';
-
-const terminalLines = [
-    {
-        prompt: 'thaina@portfolio',
-        command: 'whoami',
-        output: 'developer • curious mind • loves to learn new things • loves art',
-    },
-    {
-        prompt: 'thaina@portfolio',
-        command: 'git status',
-        output: 'On branch always-learning.',
-        extra: 'Your branch is up to date with curiosity.',
-    },
-    {
-        prompt: 'thaina@portfolio',
-        command: 'npm run craft',
-        output: 'Building delightful experiences... done',
-    },
-];
+import { useDictionary } from '@/components/i18n/DictionaryProvider';
 
 function HeroTerminalArrow() {
     const shouldReduceMotion = useReducedMotion();
@@ -115,6 +97,9 @@ function HeroTerminalArrow() {
 }
 
 export function Hero() {
+    const { dictionary } = useDictionary();
+    const t = dictionary.hero;
+    const terminalLines = t.terminal;
     return (
         <section id="top" className="relative grid flex-1 overflow-x-hidden overflow-y-visible lg:min-h-svh lg:-mt-28">
             <div className="pointer-events-none absolute inset-0 overflow-x-hidden overflow-y-visible" aria-hidden="true">
@@ -135,7 +120,7 @@ export function Hero() {
                                 src="/images/assets/tape2.png"
                                 alt=""
                             />
-                            <span className="relative z-10">Hey, I'm</span>
+                            <span className="relative z-10">{t.greeting}</span>
                         </span>
                     </p>
                     
@@ -149,24 +134,24 @@ export function Hero() {
                     </h1>
 
                     <p className="mx-auto mb-5 max-w-sm text-base font-medium leading-relaxed text-text-primary sm:mb-8 sm:text-xl md:mx-0">
-                        Somewhere between code & creativity. I build digital things with
+                        {t.descriptionStart}
                          <span className="mx-2 inline-block"><ViewportRoughNotation
                             type="circle"
                             show
                             color="#8B6FF7"
                             strokeWidth={2}
                             animationDuration={800}
-                        > curiosity</ViewportRoughNotation></span>, thoughtful code and a little personality.
+                        > {t.descriptionHighlight}</ViewportRoughNotation></span>{t.descriptionEnd}
                     </p>
 
                     <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-6 md:justify-start">
                         <PrimaryButton className="min-h-11 px-5 text-xs sm:px-6 uppercase" href="#journey">
-                            My work
+                            {t.workCta}
                             <FaArrowRight size={14} />
                         </PrimaryButton>
 
                         <TextButton className="text-xs uppercase" href="#about">
-                            About me
+                            {t.aboutCta}
                             <FaArrowDown size={14} />
                         </TextButton>
                     </div>
@@ -218,10 +203,10 @@ export function Hero() {
                                 <div className="flex flex-wrap items-center gap-2 border-t border-white/10 pt-3 text-xs font-bold uppercase text-white/50 sm:pt-4">
                                     <span className="rounded-full bg-white/10 px-3 py-1.5">React</span>
                                     <span className="rounded-full bg-white/10 px-3 py-1.5">Laravel</span>
-                                    <span className="rounded-full bg-white/10 px-3 py-1.5">Design</span>
+                                    <span className="rounded-full bg-white/10 px-3 py-1.5">{t.design}</span>
                                     <span className="inline-flex items-center gap-2 text-primary">
                                         <span className="size-2 animate-pulse rounded-full bg-primary" />
-                                        ready
+                                        {t.ready}
                                     </span>
                                 </div>
                             </div>

@@ -1,0 +1,176 @@
+{
+  "metadata": {
+    "title": "Thainá Pires — Desenvolvedora Full Stack",
+    "description": "Portfólio de Thainá Pires, desenvolvedora full stack que cria experiências digitais cuidadosas, acessíveis e de alto desempenho.", 
+    "ogImageAlt": "Thainá Pires — Desenvolvedora Full Stack"
+  },
+  "languageSwitcher": {
+    "label": "Selecionar idioma",
+    "languages": { "en": "Inglês", "pt-BR": "Português (Brasil)" } 
+  },
+  "navigation": {
+    "label": "Navegação principal",
+    "mobileLabel": "Navegação móvel",
+    "openMenu": "Abrir menu",
+    "closeMenu": "Fechar menu",
+    "homeLabel": "Início do portfólio de Thainá",
+    "items": [
+      { "label": "Início", "href": "#top" },
+      { "label": "Sobre", "href": "#about" },
+      { "label": "Skills", "href": "#stack" },
+      { "label": "Experiência", "href": "#journey" },
+      { "label": "Projetos", "href": "#projects" },
+      { "label": "Formação", "href": "#education" },
+      { "label": "Contato", "href": "#contact" }
+    ]
+  },
+  "hero": {
+    "greeting": "Olá! Eu sou a",
+    "titles": ["Full Stack Dev.", "Dev. Criativa", "Amo pedalar", "Apaixonada por Viajar", "Sempre Aprendendo"], 
+    "descriptionStart": "Entre código e criatividade, crio experiências digitais com",
+    "descriptionHighlight": "curiosidade",
+    "descriptionEnd": ", soluções bem pensadas e um pouco de personalidade.",
+    "workCta": "Meu trabalho",
+    "aboutCta": "Sobre mim",
+    "terminal": [
+      { "prompt": "thaina@portfolio", "command": "whoami", "output": "desenvolvedora • mente curiosa • sempre aprendendo • apaixonada por arte" }, 
+      { "prompt": "thaina@portfolio", "command": "git status", "output": "Na branch sempre-aprendendo.", "extra": "Sua branch está sincronizada com a curiosidade." }, 
+      { "prompt": "thaina@portfolio", "command": "npm run craft", "output": "Criando experiências encantadoras... pronto" }
+    ],
+    "design": "Design",
+    "ready": "pronto"
+  },
+  "about": {
+    "label": "QUEM ESTÁ POR TRÁS DO CÓDIGO",
+    "titleStart": "Gosto muito de",
+    "titleHighlight": "criar coisas",
+    "titleEnd": "e encontrar formas de deixá-las ainda melhores.",
+    "descriptionStart": "Às vezes é uma aplicação web, às vezes um projeto pessoal, às vezes algo que não tem absolutamente nada a ver com código. Eu gosto mesmo é do processo de transformar uma ideia em",
+    "descriptionHighlight": "algo real",
+    "location": "Rio de Janeiro, Brasil",
+    "remote": "Trabalho remotamente",
+    "timezone": "UTC-3 (BRT)",
+    "portuguese": "Português",
+    "english": "Inglês",
+    "native": "Nativo",
+    "fluent": "Fluente",
+    "statisticsLabel": "Estatísticas do portfólio",
+    "portraitLabel": "Retrato editorial de Thainá",
+    "portraitAlt": "Retrato de Thainá",
+    "queerDev": "dev queer",
+    "age": "28 anos",
+    "statistics": [
+      { "value": 5, "subvalue": "+", "label": "Anos de experiência" },
+      { "value": 2, "label": "Idiomas falados" },
+      { "subvalue": "∞", "label": "Coisas para explorar" }
+    ]
+  },
+  "skills": {
+    "label": "SKILLS",
+    "titleStart": "Meu kit",
+    "titleHighlight": "criativo",
+    "titleEnd": "de ferramentas",
+    "description": "Linguagens, frameworks e ferramentas que uso para transformar ideias em produtos reais.",
+    "learningLine1": "sempre aprendendo",
+    "learningLine2": "coisas novas",
+    "loveStart": "e outras ferramentas e tecnologias que eu",
+    "love": "adoro",
+    "loveEnd": "usar",
+    "orIUsed": "ou ferramentas que já utilizei."
+  },
+  "contributions": {
+    "label": "GITHUB + GITLAB",
+    "titleStart": "Um ano em",
+    "titleHighlight": "código",
+    "description": "Um pouco da minha atividade de desenvolvimento no GitHub e no GitLab.",
+    "total": "Total",
+    "weekdays": ["Seg", "Qua", "Sex"],
+    "less": "Menos",
+    "more": "Mais",
+    "vacation": "Férias",
+    "dayOff": "Folga",
+    "holiday": "Feriado",
+    "contributionOne": "contribuição",
+    "contributionOther": "contribuições",
+    "and": "e",
+    "notConfigured": "Os dados de contribuição serão carregados depois que as variáveis de ambiente do GitHub e do GitLab forem configuradas.",
+    "unavailable": "Exibindo os dados disponíveis. Não foi possível carregar dados de {sources}."
+  },
+  "journey": {
+    "label": "MINHA JORNADA",
+    "title": "Por onde passei e o que aprendi",
+    "description": "Cada experiência moldou a forma como penso, construo e resolvo problemas hoje.",
+    "showLess": "Mostrar menos",
+    "showAll": "Ver todas as experiências",
+    "downloadCv": "Baixar currículo",
+    "soon": "Em breve",
+    "entries": [
+      { "period": "2026 — Atual", "title": "Desenvolvedora Full Stack Pleno", "company": "Rede Parcerias", "location": "Remoto · Rio de Janeiro, Brasil", "description": "Desenvolvo e evoluo funcionalidades complexas para uma plataforma SaaS multi-tenant, atuando em frontend, backend, APIs e integrações. Trabalho com foco em arquitetura escalável, performance, manutenibilidade e experiência do usuário, além de contribuir para decisões técnicas, revisões de código e melhorias contínuas." }, 
+      { "period": "2021 — 2025", "title": "Desenvolvedora Full Stack Júnior", "company": "Rede Parcerias", "location": "Remoto · Rio de Janeiro, Brasil", "description": "Desenvolvi e mantive funcionalidades em uma plataforma SaaS multi-tenant, atuando no frontend e no backend, além de trabalhar com APIs corporativas e integrações com terceiros. Contribuí para a modernização de sistemas legados, microsserviços, fluxos de autenticação e melhorias contínuas da plataforma." },
+      { "period": "2021", "title": "Estagiária em Desenvolvimento de Software", "company": "Rede Parcerias", "location": "Remoto · Rio de Janeiro, Brasil", "description": "Comecei minha carreira em desenvolvimento criando funcionalidades web, mantendo aplicações existentes e integrando APIs corporativas. Trabalhei de perto com uma equipe internacional e ganhei experiência prática com sistemas em produção, depuração e desenvolvimento colaborativo." },
+      { "period": "2020 — 2021", "title": "Cofundadora e Desenvolvedora", "company": "Duki.app", "location": "Remoto · Rio de Janeiro, Brasil", "description": "Cofundei um projeto educacional de impacto social, criando ferramentas digitais e ajudando a transformar uma ideia em um produto real." },
+      { "period": "2018 — 2019", "title": "Marketing e Audiovisual", "company": "Enactus CEFET/RJ", "location": "Rio de Janeiro, Brasil", "description": "Atuei com comunicação, marketing e produção audiovisual para projetos de empreendedorismo social e eventos nacionais." },
+      { "period": "2018 — 2019", "title": "Marketing e Branding", "company": "Toti", "location": "Rio de Janeiro, Brasil", "description": "Trabalhei com branding, identidade visual e conteúdo digital para uma startup de impacto social focada em educação e tecnologia." }
+    ]
+  },
+  "projects": {
+    "label": "PROJETOS EM DESTAQUE",
+    "titleStart": "Coisas que eu",
+    "titleHighlight": "construí",
+    "description": "Uma coleção de ideias que imaginei, explorei, desenhei e tirei do papel.",
+    "viewProject": "Ver projeto",
+    "viewMore": "Ver mais no GitHub",
+    "items": [
+      { "title": "Bom dia Dev", "description": "Um dashboard pessoal que reúne status de MRs do GitLab, volume de revisões de código e atividade diária de desenvolvimento em uma única visão.", "imageAlt": "Captura de tela do dashboard Bom dia Dev", "stats": ["Dashboard", "GitLab", "Produtividade", "TypeScript"] }, 
+      { "title": "Git Fusion", "description": "Uma ferramenta que combina dados de contribuições do GitHub e do GitLab em um gráfico unificado e interativo.", "imageAlt": "Captura de tela do projeto Git Fusion", "stats": ["Contribuições", "Integração de APIs", "Next.js"] },
+      { "title": "Schedulynx", "description": "Uma aplicação de agendamento integrada ao Google Agenda para que outras pessoas reservem horários diretamente no seu calendário.", "imageAlt": "Captura de tela do projeto Schedulynx", "stats": ["Agendamento", "Integração com calendário", "OAuth"] },
+      { "title": "ColorMixer", "description": "Misture duas cores e veja o resultado em tempo real.", "imageAlt": "Captura de tela do projeto ColorMixer", "stats": ["Cores", "Criatividade"] }
+    ]
+  },
+  "education": {
+    "label": "FORMAÇÃO E APRENDIZADO",
+    "titleStart": "Aprendizado",
+    "titleHighlight": "contínuo",
+    "description": "A formação acadêmica me deu uma base sólida. Cursos e a procura por aprendizado contínuo me ajudam a seguir evoluindo.", 
+    "educationTitle": "Formação",
+    "certificationsTitle": "Certificações",
+    "viewEducation": "Ver mais detalhes",
+    "viewCertificates": "Ver todos os certificados",
+    "entries": [
+      { "period": "2016 — 2021", "title": "Ciência da Computação", "institution": "Centro Federal de Educação Tecnológica Celso Suckow da Fonseca (CEFET/RJ)", "degree": "Bacharelado", "location": "Rio de Janeiro, Brasil", "description": "Uma base sólida em engenharia de software, algoritmos, estruturas de dados e resolução de problemas.", "note": "CEFET/RJ" },
+      { "period": "2019 — 2020", "title": "Intercâmbio Acadêmico Internacional", "institution": "Instituto Politécnico de Santarém", "degree": "1 semestre da graduação", "location": "Santarém, Portugal", "description": "Intercâmbio acadêmico de um semestre em Portugal, com disciplinas do curso de Informática no IPSantarém.", "note": "Intercâmbio Internacional 🇵🇹" }
+    ],
+    "certifications": [
+      { "title": "Clean Code", "issuer": "Rocketseat", "year": "Abr 2025" },
+      { "title": "Aprofundando em Next.js", "issuer": "Rocketseat", "year": "Abr 2025" },
+      { "title": "Programa de Desenvolvimento ReactJS", "issuer": "Rocketseat", "year": "Abr 2025" },
+      { "title": "Fundamentos da Cultura DevOps", "issuer": "Rocketseat", "year": "Out 2024" },
+      { "title": "Design System", "issuer": "Rocketseat", "year": "Out 2024" }
+    ]
+  },
+  "hobbies": {
+    "label": "MEUS HOBBIES",
+    "titleStart": "A vida fora do",
+    "titleHighlight": "terminal",
+    "description": "As coisas que alimentam minha curiosidade, criatividade e inspiração.",
+    "extrasLabel": "Outras coisas de que gosto",
+    "placesKey": "lugares",
+    "items": [
+      { "title": "Ciclismo", "description": "Liberdade sobre duas rodas. Pedalar me mantém presente e me desafia a ir mais longe.", "imageAlt": "Thainá andando de bicicleta" },
+      { "title": "Natureza", "description": "Estar ao ar livre me ajuda a recarregar as energias e me lembra do que realmente importa.", "imageAlt": "Paisagem em meio à natureza" }, 
+      { "title": "Arte", "description": "Adoro explorar a criatividade por meio de ilustrações, pinturas e pequenos projetos visuais.", "imageAlt": "Materiais e trabalhos artísticos" },
+      { "title": "Leitura", "description": "Os livros me inspiram, ensinam e transportam para novos mundos.", "imageAlt": "Livros e leitura" },
+      { "title": "Viagens", "description": "Explorar novos lugares e culturas amplia minhas referências e muda meu jeito de enxergar o mundo.", "imageAlt": "Memórias de viagens" }
+    ],
+    "extras": ["plantas", "cerâmica fria", "aquarela", "pintura acrílica", "história da arte", "GeoGuessr", "quebra-cabeças", "oceano", "carioca", "amo açaí", "camping", "trilhas", "lugares que visitei"] 
+  },
+  "contact": {
+    "title": "Vamos criar algo",
+    "highlight": "incrível!",
+    "description": "Aberta a novas oportunidades e projetos.",
+    "cta": "ENTRE EM CONTATO",
+    "facts": ["Rio de Janeiro, Brasil", "Trabalho remotamente", "Aberta a oportunidades no mundo todo"]
+  },
+  "social": { "label": "Links sociais", "connect": "VAMOS CONVERSAR" },
+  "footer": { "socialLabel": "Links sociais do rodapé", "copyright": "Todos os direitos reservados.", "madeWith": "Feito com" }
+}

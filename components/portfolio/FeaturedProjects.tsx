@@ -2,7 +2,9 @@ import { ArrowUpRight } from 'lucide-react';
 import { FaGithub } from 'react-icons/fa';
 
 import type { Project } from '@/data/portfolio';
-import { projects, socialLinks } from '@/data/portfolio';
+import { socialLinks } from '@/data/portfolio';
+import { useLocalizedPortfolio } from '@/data/useLocalizedPortfolio';
+import { useDictionary } from '@/components/i18n/DictionaryProvider';
 import { Container } from '@/components/ui/Container';
 import { SectionLabel } from '@/components/ui/SectionLabel';
 import { ViewportRoughNotation } from '../ui/ViewportRoughNotation';
@@ -42,11 +44,13 @@ function TechTags({ technologies }: { technologies: string[] }) {
 }
 
 function ProjectLinks({ project }: { project: Project }) {
+    const { dictionary } = useDictionary();
+    const t = dictionary.projects;
     return (
         <div className="flex flex-wrap items-center gap-x-7 gap-y-3 text-xs font-extrabold uppercase text-text-primary">
             {project.href && (
                 <a className="group/link inline-flex items-center gap-2 text-primary-strong transition-colors hover:text-primary motion-reduce:transition-none" href={project.href} target="_blank">
-                    View project
+                    {t.viewProject}
                     <ArrowUpRight className="size-3.5 transition-transform group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5 motion-reduce:transition-none motion-reduce:group-hover/link:translate-x-0 motion-reduce:group-hover/link:translate-y-0" aria-hidden="true" />
                 </a>
             )}
@@ -153,15 +157,18 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
 }
 
 export function FeaturedProjects() {
+    const { dictionary } = useDictionary();
+    const { projects } = useLocalizedPortfolio();
+    const t = dictionary.projects;
     // const [featuredProject, ...moreProjects] = projects;
 
     return (
         <section id="projects" className="section-y scroll-mt-24 border-b border-border lg:scroll-mt-28">
             <Container>
                 <div className="mb-8 max-w-xl sm:mb-10">
-                    <SectionLabel>SELECTED WORK</SectionLabel>
+                    <SectionLabel>{t.label}</SectionLabel>
                     <h2 className="mt-3 mb-3 text-4xl font-extrabold leading-tight sm:text-5xl lg:text-6xl">
-                        Things I've {' '}
+                        {t.titleStart}{' '}
                         <ViewportRoughNotation
                             type="highlight" 
                             show 
@@ -169,10 +176,10 @@ export function FeaturedProjects() {
                             strokeWidth={2}
                             animationDuration={800}
                         >
-                            built
+                            {t.titleHighlight}
                         </ViewportRoughNotation>.
                     </h2>
-                    <p className="m-0 text-base leading-7 text-text-secondary sm:text-lg">A collection of things I've imagined, explored, designed and turned into working software.</p>
+                    <p className="m-0 text-base leading-7 text-text-secondary sm:text-lg">{t.description}</p>
                 </div>
                                                                                            
                 {/* {featuredProject && <FeaturedProject project={featuredProject} />} */}
@@ -193,7 +200,7 @@ export function FeaturedProjects() {
                                 rel="noreferrer"
                             >
                                 <FaGithub className="size-4" aria-hidden="true" />
-                                View more on GitHub
+                                {t.viewMore}
                                 <ArrowUpRight className="size-3.5 transition-transform group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5 motion-reduce:transition-none motion-reduce:group-hover/link:translate-x-0 motion-reduce:group-hover/link:translate-y-0" aria-hidden="true" />
                             </a>
                         </div>

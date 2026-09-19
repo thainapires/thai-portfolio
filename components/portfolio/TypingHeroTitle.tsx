@@ -1,19 +1,14 @@
 import { useEffect, useMemo, useState } from 'react';
 import { useReducedMotion } from 'motion/react';
-
-const titles = [
-    'Full Stack Developer',
-    'Creative Coder',
-    'Cycling Enthusiast',
-    'Traveler at heart',
-    'Lifelong Learner',
-];
+import { useDictionary } from '@/components/i18n/DictionaryProvider';
 
 const typingSpeed = 60;
 const deletingSpeed = 35;
 const pauseDuration = 1600;
 
 export function TypingHeroTitle() {
+    const { dictionary } = useDictionary();
+    const titles = dictionary.hero.titles;
     const shouldReduceMotion = useReducedMotion();
     const [titleIndex, setTitleIndex] = useState(0);
     const [characterIndex, setCharacterIndex] = useState(titles[0].length);
@@ -64,7 +59,7 @@ export function TypingHeroTitle() {
     return (
         <strong
             className="mx-auto mt-2 grid w-fit -rotate-3 font-hand text-4xl font-bold text-primary sm:text-6xl md:mx-0 md:ml-16 lg:text-5xl"
-            aria-label="Full Stack Developer"
+            aria-label={titles[0]}
         >
             <span className="col-start-1 row-start-1 whitespace-nowrap" aria-hidden="true">
                 {currentTitle.slice(0, characterIndex)}

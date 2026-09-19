@@ -1,11 +1,13 @@
 import { ArrowRight } from 'lucide-react';
-import { contactFacts } from '@/data/portfolio';
 import { Container } from '@/components/ui/Container';
 import { PrimaryButton } from '@/components/ui/Buttons';
 import { Doodle } from './decorations/Doodle';
 import { DotPattern } from './decorations/DotPattern';
+import { useDictionary } from '@/components/i18n/DictionaryProvider';
+import { useLocalizedPortfolio } from '@/data/useLocalizedPortfolio';
 
 function ContactFacts() {
+    const { contactFacts } = useLocalizedPortfolio();
     return (
         <ul className="m-0 grid list-none gap-2.5 p-0">
             {contactFacts.map((fact) => {
@@ -23,6 +25,8 @@ function ContactFacts() {
 }
 
 export function ContactCTA() {
+    const { dictionary } = useDictionary();
+    const t = dictionary.contact;
     return (
         <section id="contact" className="pb-12 md:pb-16 lg:pb-20">
             <Container>
@@ -36,14 +40,14 @@ export function ContactCTA() {
 
                     <div className="relative z-2 grid gap-3 md:col-span-5">
                         <h2 className="m-0 max-w-2xl text-3xl leading-tight font-bold sm:text-4xl lg:text-5xl xl:text-5xl">
-                            Let's build something
+                            {t.title}
                             <em className="block font-serif font-bold italic text-primary">
-                                amazing together!
+                                {t.highlight}
                             </em>
                         </h2>
 
                         <p className="m-0 text-sm font-semibold text-text-secondary sm:text-base">
-                            Open to new opportunities &amp; projects.
+                            {t.description}
                         </p>
                     </div>
 
@@ -55,7 +59,7 @@ export function ContactCTA() {
                         <Doodle className="w-36 rotate-[-8deg] text-primary sm:w-44" />
 
                         <PrimaryButton href="mailto:thainapires.dev@gmail.com">
-                            GET IN TOUCH
+                            {t.cta}
                             <ArrowRight size={16} />
                         </PrimaryButton>
                     </div>

@@ -3,6 +3,7 @@ import { motion } from 'motion/react';
 import { Doodle } from './decorations/Doodle';
 import { DotPattern } from './decorations/DotPattern';
 import { usePointerParallax } from './usePointerParallax';
+import { useDictionary } from '@/components/i18n/DictionaryProvider';
 
 type AboutPortraitCollageProps = {
     imageSrc: string;
@@ -10,11 +11,13 @@ type AboutPortraitCollageProps = {
 
 export function AboutPortraitCollage({ imageSrc }: AboutPortraitCollageProps) {
     const { containerHandlers, styles } = usePointerParallax();
+    const { dictionary } = useDictionary();
+    const t = dictionary.about;
 
     return (
         <div
             className="relative order-2 mx-auto grid aspect-[4/5] w-full max-w-xs place-items-center sm:max-w-sm md:order-2 lg:order-none lg:col-span-4 lg:mx-0 xl:col-span-3"
-            aria-label="Placeholder editorial para foto de Thainá"
+            aria-label={t.portraitLabel}
             {...containerHandlers}
         >
             <motion.span
@@ -33,7 +36,7 @@ export function AboutPortraitCollage({ imageSrc }: AboutPortraitCollageProps) {
                 <img
                     className="h-full w-full object-cover"
                     src={imageSrc}
-                    alt="Foto de Thainá"
+                    alt={t.portraitAlt}
                 />
             </motion.div>
 
@@ -56,7 +59,7 @@ export function AboutPortraitCollage({ imageSrc }: AboutPortraitCollageProps) {
                 className="pointer-events-none absolute right-0 top-44 z-5 inline-flex translate-x-1/4 rotate-6 items-center rounded-pill border border-border bg-surface/90 px-2.5 py-1.5 text-xs font-extrabold leading-none text-text-primary shadow-card sm:right-1 sm:top-48"
                 aria-hidden="true"
             >
-                28 y.o.
+                {t.age}
             </motion.span>
 
             <motion.div style={styles.decoration} className="absolute bottom-8 left-4 z-4">

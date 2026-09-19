@@ -1,13 +1,16 @@
 import { ChevronDown, ChevronUp, MapPin } from 'lucide-react';
 import { useEffect, useRef, useState } from 'react';
 
-import { journey } from '@/data/portfolio';
+import { useDictionary } from '@/components/i18n/DictionaryProvider';
+import { useLocalizedPortfolio } from '@/data/useLocalizedPortfolio';
 import { Container } from '@/components/ui/Container';
 import { SectionLabel } from '@/components/ui/SectionLabel';
 import { Star } from './decorations/Star';
 import { IoDocument } from 'react-icons/io5';
 
 function DownloadCvButton() {
+    const { dictionary } = useDictionary();
+    const t = dictionary.journey;
     const [showTooltip, setShowTooltip] = useState(false);
     const hideTimeoutRef = useRef<ReturnType<typeof setTimeout> | undefined>(undefined);
 
@@ -30,7 +33,7 @@ function DownloadCvButton() {
                 onMouseEnter={revealTooltip}
             >
                 <IoDocument className="size-4 text-primary/50" aria-hidden="true" />
-                Download CV
+                {t.downloadCv}
             </button>
 
             <span
@@ -38,7 +41,7 @@ function DownloadCvButton() {
                 role="tooltip"
                 className={`pointer-events-none absolute -top-2 left-1/2 -translate-x-1/2 -translate-y-full whitespace-nowrap rounded-pill bg-text-primary px-3 py-1.5 text-xs font-bold text-white shadow-floating transition-opacity duration-150 ${showTooltip ? 'opacity-100' : 'opacity-0'}`}
             >
-                Soon
+                {t.soon}
                 <span className="absolute left-1/2 top-full -translate-x-1/2 border-4 border-transparent border-t-text-primary" aria-hidden="true" />
             </span>
         </div>
@@ -46,6 +49,9 @@ function DownloadCvButton() {
 }
 
 export function Journey() {
+    const { dictionary } = useDictionary();
+    const { journey } = useLocalizedPortfolio();
+    const t = dictionary.journey;
     const [isExpanded, setIsExpanded] = useState(false);
     const visibleJourney = isExpanded ? journey : journey.slice(0, 2);
 
@@ -54,12 +60,12 @@ export function Journey() {
             <Star className="pointer-events-none absolute right-[10%] top-20 hidden size-6 rotate-12 text-primary/70 lg:block" />
             <Container>
                 <div className="max-w-2xl">
-                    <SectionLabel>MY JOURNEY</SectionLabel>
+                    <SectionLabel>{t.label}</SectionLabel>
                     <h2 className="mt-3 mb-4 text-4xl font-extrabold leading-tight sm:text-5xl lg:text-6xl">
-                        Where I've been &amp; what I've learned<span className="text-primary">.</span>
+                        {t.title}<span className="text-primary">.</span>
                     </h2>
                     <p className="m-0 max-w-2xl text-base leading-7 text-text-secondary sm:text-lg">
-                        Every experience has shaped the way I think, build and solve problems today.
+                        {t.description}
                     </p>
                 </div>
                 <ol id="journey-timeline" className="relative mt-12 list-none space-y-10 p-0 sm:mt-14 sm:space-y-12">
@@ -93,7 +99,7 @@ export function Journey() {
                             aria-controls="journey-timeline"
                             onClick={() => setIsExpanded((expanded) => !expanded)}
                         >
-                            {isExpanded ? "Show less" : "View all experiences"}
+                            {isExpanded ? t.showLess : t.showAll}
                             {isExpanded ? <ChevronUp className="size-4 text-primary" aria-hidden="true" /> : <ChevronDown className="size-4 text-primary" aria-hidden="true" />}
                         </button>
                     )}
